@@ -17,6 +17,7 @@ export type ThemeType = {
   bntOutlineActive: string;
   timing_function__main: string;
   timing_function__long: string;
+  desktopWidth: string;
 };
 export const theme = {
   backgroundGradient:
@@ -39,6 +40,8 @@ export const theme = {
   bntOutlineActive: "#e9e7dd",
   timing_function__main: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
   timing_function__long: " 500ms cubic-bezier(0.4, 0, 0.2, 1)",
+
+  desktopWidth: "960px",
 } as ThemeType;
 
 export const colors = {

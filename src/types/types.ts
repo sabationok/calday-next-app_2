@@ -23,11 +23,7 @@ export interface IFeatureItem {
   isActive?: boolean;
   onClick?: React.MouseEventHandler;
 }
-export interface IIntegrationItem {
-  icon: string | StaticImageData;
-  alt: string;
-  descr?: string;
-}
+
 export interface IFAQItem {
   title?: string;
   descr?: string;

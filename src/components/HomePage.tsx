@@ -3,10 +3,10 @@ import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout";
 
 import SectionHero from "./SectionHero/SectionHero";
+import SectionFeatures from "./SectionFeatures/SectionFeatures";
 // import SectionBuyNow from '../SectionBuyNow/SectionBuyNow';
 // import SectionDownloadApp from '../SectionDownloadApp/SectionDownloadApp';
 // import SectionFAQ from '../SectionFAQ/SectionFAQ';
-// import SectionFeatures from '../SectionFeatures/SectionFeatures';
 // import SectionShedulingInfo from '../SectionShedulingInfo/SectionShedulingInfo';
 
 const HomePage: React.FC = () => {
@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
       <Header />
       <main>
         <SectionHero />
-        {/* <SectionFeatures /> */}
+        <SectionFeatures />
         {/* <SectionShedulingInfo /> */}
         {/* <SectionDownloadApp /> */}
         {/* <SectionByCustomers /> */}
