@@ -2,20 +2,21 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout";
 
-import testData from "@/testData";
-
 import SectionHero from "./SectionHero/SectionHero";
 import SectionFeatures from "./SectionFeatures/SectionFeatures";
 import SectionShedulingInfo from "./SectionShedulingInfo/SectionShedulingInfo";
 import SectionDownloadApp from "./SectionDownloadApp/SectionDownloadApp";
-// import SectionBuyNow from '../SectionBuyNow/SectionBuyNow';
 import SectionFAQ from "./SectionFAQ/SectionFAQ";
+import SectionBuyNow from "./SectionBuyNow/SectionBuyNow";
+
+import testData from "@/testData";
 
 const HomePage: React.FC = () => {
   const { shedulingSectionData } = testData;
   return (
     <Layout>
       <Header />
+
       <main>
         <SectionHero />
 
@@ -27,8 +28,9 @@ const HomePage: React.FC = () => {
 
         <SectionFAQ />
 
-        {/* <SectionBuyNow /> */}
+        <SectionBuyNow />
       </main>
+
       <Footer />
     </Layout>
   );

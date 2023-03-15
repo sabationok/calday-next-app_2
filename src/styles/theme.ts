@@ -114,7 +114,7 @@ export const paramsMap = {
   backgroundColorActive: {
     filled: colors.blackPrimary,
     outlinedLarge: colors.bagePrimary,
-    outlinedLargeGradient: colors.bagePrimary,
+    outlinedLargeGradient: "",
     outlinedSmall: "#F7F6F0",
   },
   borderColorActive: {
@@ -186,7 +186,7 @@ export const paramsMap = {
   backgroundActive: {
     filled: "",
     outlinedLarge: "",
-    outlinedLargeGradient: colors.backgroundGradientActive,
+    outlinedLargeGradient: "",
     outlinedSmall: "",
   },
 };
