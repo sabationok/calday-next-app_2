@@ -7,9 +7,9 @@ import testData from "@/testData";
 import SectionHero from "./SectionHero/SectionHero";
 import SectionFeatures from "./SectionFeatures/SectionFeatures";
 import SectionShedulingInfo from "./SectionShedulingInfo/SectionShedulingInfo";
+import SectionDownloadApp from "./SectionDownloadApp/SectionDownloadApp";
 // import SectionBuyNow from '../SectionBuyNow/SectionBuyNow';
-// import SectionDownloadApp from '../SectionDownloadApp/SectionDownloadApp';
-// import SectionFAQ from '../SectionFAQ/SectionFAQ';
+import SectionFAQ from "./SectionFAQ/SectionFAQ";
 
 const HomePage: React.FC = () => {
   const { shedulingSectionData } = testData;
@@ -18,11 +18,15 @@ const HomePage: React.FC = () => {
       <Header />
       <main>
         <SectionHero />
+
         <SectionFeatures />
+
         <SectionShedulingInfo {...shedulingSectionData} />
-        {/* <SectionDownloadApp /> */}
-        {/* <SectionByCustomers /> */}
-        {/* <SectionFAQ /> */}
+
+        <SectionDownloadApp />
+
+        <SectionFAQ />
+
         {/* <SectionBuyNow /> */}
       </main>
       <Footer />

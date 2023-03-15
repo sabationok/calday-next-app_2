@@ -1,10 +1,20 @@
-import Image from "next/image";
-import { IFeatureItem } from "@/types/types";
+import Image, { StaticImageData } from "next/image";
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
 import styled, { ThemedStyledProps } from "styled-components";
 import { ThemeType } from "@/styles/theme";
 
-const FeatureItem: React.FC<IFeatureItem> = ({
+type FeatureItemProps = {
+  icon: string | StaticImageData;
+  iconAlt: string;
+  title?: string;
+  descr?: string;
+  imgURL: string | StaticImageData;
+  imgAlt: string;
+  isActive?: boolean;
+  onClick?: React.MouseEventHandler;
+};
+
+const FeatureItem: React.FC<FeatureItemProps> = ({
   icon,
   iconAlt,
   title,
