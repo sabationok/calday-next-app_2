@@ -157,11 +157,9 @@ export const shedulingSectionData = {
   subTitle: "Streamline operations and improve efficiency in any industry.",
   list: [
     {
-      transfer: {
-        from: "Teacher",
-        to: "Student",
-      },
-      transferColor: "#62C45B",
+      from: "Teacher",
+      to: "Student",
+      fill: "#62C45B",
       descrList: [
         "Track assignments.",
         " Manage classes.",
@@ -169,14 +167,11 @@ export const shedulingSectionData = {
         " Track progress.",
         " Monitor grades.",
       ],
-      link: "#",
     },
     {
-      transfer: {
-        from: "Business",
-        to: "Client",
-      },
-      transferColor: "#EA8C1F",
+      from: "Business",
+      to: "Client",
+      fill: "#EA8C1F",
       descrList: [
         "Track assignments.",
         " Manage classes.",
@@ -184,14 +179,11 @@ export const shedulingSectionData = {
         " Track progress.",
         " Monitor grades.",
       ],
-      link: "#",
     },
     {
-      transfer: {
-        from: "Expert",
-        to: "Folows",
-      },
-      transferColor: "#5B6CC4",
+      from: "Expert",
+      to: "Folows",
+      fill: "#5B6CC4",
       descrList: [
         "Track assignments.",
         " Manage classes.",
@@ -199,14 +191,11 @@ export const shedulingSectionData = {
         " Track progress.",
         " Monitor grades.",
       ],
-      link: "#",
     },
     {
-      transfer: {
-        from: "Trainer",
-        to: "Trainee",
-      },
-      transferColor: "#C45B5B",
+      from: "Trainer",
+      to: "Trainee",
+      fill: "#C45B5B",
       descrList: [
         "Track assignments.",
         " Manage classes.",
@@ -214,7 +203,6 @@ export const shedulingSectionData = {
         " Track progress.",
         " Monitor grades.",
       ],
-      link: "#",
     },
   ],
 };
