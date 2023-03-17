@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { paramsMap } from "@/styles/theme";
+import Icon from "./Icon";
 
 export interface ButtonProps {
   variant:
@@ -10,6 +11,7 @@ export interface ButtonProps {
   type?: "button" | "submit" | "reset";
   children?: React.ReactNode;
   style?: object;
+  iconId?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,14 +19,18 @@ const Button: React.FC<ButtonProps> = ({
   variant = "filled",
   type = "button",
   style,
+  iconId,
   ...props
 }) => {
   return (
     <StyledButton {...{ variant, type, style, ...props }}>
       {children}
+      {iconId && <BtnIcon id={iconId} size="20px" />}
     </StyledButton>
   );
 };
+
+const BtnIcon = styled(Icon)``;
 
 const StyledButton = styled.button`
   display: flex;
@@ -52,6 +58,9 @@ const StyledButton = styled.button`
     paramsMap?.backgroundColor[variant]};
   fill: ${({ variant }: ButtonProps) => paramsMap?.fill[variant]};
   color: ${({ variant }: ButtonProps) => paramsMap?.color[variant]};
+  ${BtnIcon} {
+    color: ${({ variant }) => paramsMap?.fill[variant]};
+  }
 
   border-color: ${({ variant }: ButtonProps) =>
     paramsMap?.borderColor[variant]};
@@ -72,6 +81,9 @@ const StyledButton = styled.button`
     color: ${({ variant }: ButtonProps) => paramsMap?.colorHover[variant]};
     border-color: ${({ variant }: ButtonProps) =>
       paramsMap?.borderColorHover[variant]};
+    ${BtnIcon} {
+      color: ${({ variant }) => paramsMap?.fillHover[variant]};
+    }
   }
   &:active {
     background-color: ${({ variant }: ButtonProps) =>
@@ -82,6 +94,9 @@ const StyledButton = styled.button`
       paramsMap?.borderColorActive[variant]};
     background: ${({ variant }: ButtonProps) =>
       paramsMap?.backgroundActive[variant]};
+    ${BtnIcon} {
+      color: ${({ variant }) => paramsMap?.fillActive[variant]};
+    }
   }
 `;
 

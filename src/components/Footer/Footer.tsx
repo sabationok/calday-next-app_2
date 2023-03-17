@@ -24,7 +24,6 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  /* height: 359px; */
 
   background: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
 `;
@@ -44,7 +43,7 @@ export const Copyright = styled.p`
   font-size: 15px;
   line-height: 1.33;
 
-  color: ${({ theme }) => theme?.bagePrimary};
+  color: ${({ theme }: { theme: ThemeType }) => theme.bagePrimary};
   text-align: center;
 `;
 

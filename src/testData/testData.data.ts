@@ -215,6 +215,18 @@ export const downloadAppSectionData = {
     image: images.iPhone_image_2x,
     alt: "iphone 12 pro",
   },
+  downloadApp: {
+    googleLink: {
+      img: images.Google_Play,
+      alt: "get on Play Market",
+      link: "#",
+    },
+    appleLink: {
+      img: images.App_Store,
+      alt: "get on App Store",
+      link: "#",
+    },
+  },
 };
 
 export const faqSectionData = {
@@ -368,19 +380,4 @@ export const footerData = {
   },
   contacts: { title: "Contacts", email: "support@calday.app", phone: "" },
   copyright: "© Calday 2023 | All Rights Reserved",
-};
-
-export const globals = {
-  downloadApp: {
-    googleLink: {
-      img: images.PlayMarketIcon_2x,
-      alt: "get on Play Market",
-      link: "#",
-    },
-    appleLink: {
-      img: images.AppStoreIcon_2x,
-      alt: "get on App Store",
-      link: "#",
-    },
-  },
 };

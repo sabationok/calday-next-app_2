@@ -65,14 +65,16 @@ const FooterList: React.FC = () => {
 
 export const StyledFooterList = styled.ul`
   display: grid;
-  justify-content: center;
-  gap: 16px;
-
+  /* justify-content: start; */
+  gap: 48px;
+  padding: 0 44px;
   margin-bottom: 60px;
 
   @media screen and (min-width: 960px) {
     grid-template-columns: repeat(5, 1fr);
     justify-content: start;
+    gap: 16px;
+    padding: 0;
   }
 `;
 

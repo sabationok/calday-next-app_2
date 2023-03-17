@@ -1,5 +1,6 @@
 // import SvgIcon from '@/components/SvgIcon/SvgIcon';
 // import SvgIcons, { IconsMap } from '@/components/SvgIcon/SvgIcons';
+import Icon, { IconId } from "@/components/Icon";
 import { paramsMap } from "@/styles/theme";
 import Link from "next/link";
 import styled from "styled-components";
@@ -16,10 +17,12 @@ const SignUpLinkButton: React.FC<SignUpLinkButtonProps> = ({
   return (
     <StLink href={"#"} variant={variant}>
       <span>SIGN UP</span>
-      {/* <SvgIcons icon={IconsMap.arrowRight} size="12px" /> */}
+
+      <LinkIcon id={IconId.arrow_right} />
     </StLink>
   );
 };
+const LinkIcon = styled(Icon)<{ variant?: string }>``;
 
 const StLink = styled(Link)<SignUpLinkButtonProps>`
   display: flex;
@@ -62,6 +65,9 @@ const StLink = styled(Link)<SignUpLinkButtonProps>`
     fill: ${({ variant }) => paramsMap?.fillHover[variant]};
     color: ${({ variant }) => paramsMap?.colorHover[variant]};
     border-color: ${({ variant }) => paramsMap?.borderColorHover[variant]};
+    ${LinkIcon} {
+      color: ${({ variant }) => paramsMap?.fillHover[variant]};
+    }
   }
   &:active {
     background-color: ${({ variant }) =>
@@ -70,6 +76,9 @@ const StLink = styled(Link)<SignUpLinkButtonProps>`
     color: ${({ variant }) => paramsMap?.colorActive[variant]};
     border-color: ${({ variant }) => paramsMap?.borderColorActive[variant]};
     background: ${({ variant }) => paramsMap?.backgroundActive[variant]};
+    ${LinkIcon} {
+      color: ${({ variant }) => paramsMap?.fillActive[variant]};
+    }
   }
 `;
 

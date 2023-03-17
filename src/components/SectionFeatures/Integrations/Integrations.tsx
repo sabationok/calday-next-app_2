@@ -63,7 +63,7 @@ export const IntegrationsTitle = styled.h3`
   color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
 `;
 export const IntegrationsSubTitle = styled.p`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.89;
   text-align: center;

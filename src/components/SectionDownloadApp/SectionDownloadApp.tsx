@@ -5,7 +5,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const SectionDownloadApp: React.FC = () => {
-  const { downloadAppSectionData, globals } = testData;
+  const { downloadAppSectionData } = testData;
   return (
     <Section>
       <ImageSide>
@@ -21,9 +21,21 @@ const SectionDownloadApp: React.FC = () => {
         <SubTitle>{downloadAppSectionData.descr}</SubTitle>
 
         <DownloadButtons>
-          <GetAppLink href={globals.downloadApp.googleLink.link}></GetAppLink>
+          <GetAppLink href={downloadAppSectionData.downloadApp.googleLink.link}>
+            <Image
+              src={downloadAppSectionData.downloadApp.googleLink.img}
+              alt={downloadAppSectionData.downloadApp.googleLink.alt}
+              width={150}
+            />
+          </GetAppLink>
 
-          <GetAppLink href={globals.downloadApp.appleLink.link}></GetAppLink>
+          <GetAppLink href={downloadAppSectionData.downloadApp.appleLink.link}>
+            <Image
+              src={downloadAppSectionData.downloadApp.appleLink.img}
+              alt={downloadAppSectionData.downloadApp.appleLink.alt}
+              width={150}
+            />
+          </GetAppLink>
         </DownloadButtons>
       </TextSide>
     </Section>
@@ -83,25 +95,8 @@ const DownloadButtons = styled.div`
 `;
 
 const GetAppLink = styled(Link)`
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4px;
-
-  color: #fff;
-
-  height: 44px;
   width: 150px;
   min-width: 150px;
-
-  padding: 6px 10px;
-
-  border-radius: 6px;
-  background-color: #2b2f36;
-  border: 1px solid #a6a6a6;
-  &:hover {
-    border-color: var(--actionOrangeClr);
-  }
 `;
 
 export default SectionDownloadApp;

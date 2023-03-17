@@ -4,12 +4,13 @@ export type ThemeType = {
   inearGradient_text: string;
   brownClr: string;
   brownPrime: string;
-  brownLight: string;
   blackPrimary: string;
   textBlack: string;
   actionOrange: string;
+  actionGreen: string;
   graySecondary: string;
   iconsDecor: string;
+  errorClr: string;
   inputEmptyBackground: string;
   bageBackground: string;
   bageDark: string;
@@ -31,10 +32,11 @@ export const theme = {
     "linear-gradient(92.94deg, #cc3dff -4.13%, #eda313 101.31%)",
   brownClr: "#372f2a",
   brownPrime: "#423d2f",
-  brownLight: " #d8b681",
   blackPrimary: "#40464e",
   textBlack: "#2b2f36",
   actionOrange: "#ea8c1f",
+  actionGreen: "#62C45B",
+  errorClr: "#FF3A44",
   graySecondary: "#86888b",
   iconsDecor: " #544d3b",
   inputEmptyBackground: " #f7f6f0",

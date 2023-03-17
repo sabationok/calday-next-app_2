@@ -19,7 +19,7 @@ const NavMenuMobile: React.FC = () => {
   return (
     <StNavMenuMobileContainer>
       <StNavMenuMobileButton onClick={handleMenuOpen}>
-        <Icon id={IconId.burger} size="21px" />
+        <Icon id={IconId.menu} size="21px" />
       </StNavMenuMobileButton>
 
       <StNavMenuMobile {...{ isOpen }}>
@@ -37,9 +37,8 @@ const NavMenuMobile: React.FC = () => {
           ))}
         </StMenuList>
 
-        <Button type="button" variant="filled">
+        <Button type="button" variant="filled" iconId={IconId.arrow_right}>
           <span>Sign Up/ Login</span>
-          <Icon id={IconId.arrow_right} size="21px" />
         </Button>
       </StNavMenuMobile>
     </StNavMenuMobileContainer>

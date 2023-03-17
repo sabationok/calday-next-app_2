@@ -2,12 +2,12 @@ import { memo } from "react";
 import styled from "styled-components";
 
 export const IconId = {
-  done: "done",
+  check: "check",
+  menu: "menu",
+  close: "close",
   keyboard_arrow_right: "keyboard_arrow_right",
   arrow_right: "arrow_right",
   transfer_arrows: "transfer_arrows",
-  burger: "burger",
-  close: "close",
 };
 
 type IconProps = {
@@ -37,17 +37,15 @@ const Icon: React.FC<IconProps> = ({
     />
   );
 };
+
 const StyledIcon = styled.div<IconProps>`
-  width: ${({ width, size }) => size || width || "18px"};
-  min-width: ${({ width, size }) => size || width || "18px"};
-  height: ${({ height, size }) => size || height || "18px"};
+  /* min-width: ${({ width, size }) => size || width || "18px"}; */
+
   color: ${({ color }) => color || "black"};
   &::before {
     display: block;
     font-size: ${({ width, size }) => size || width || "18px"};
-    width: ${({ width, size }) => size || width || "18px"};
-    min-width: ${({ width, size }) => size || width || "18px"};
-    height: ${({ height, size }) => size || height || "18px"};
+    /* min-width: ${({ width, size }) => size || width || "18px"}; */
     color: ${({ color }) => color};
   }
 `;

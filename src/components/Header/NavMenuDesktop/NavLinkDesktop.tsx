@@ -26,7 +26,7 @@ const StLink = styled(Link)`
     color: ${({ theme }: { theme: ThemeType }) => theme.actionOrange};
   }
   &:active {
-    color: ${({ theme }: { theme: ThemeType }) => theme.brownLight};
+    color: ${({ theme }: { theme: ThemeType }) => theme.bageDark};
   }
 `;
 

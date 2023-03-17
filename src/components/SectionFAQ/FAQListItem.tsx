@@ -1,7 +1,6 @@
-// import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
-
 import { ThemeType } from "@/styles/theme";
 import styled from "styled-components";
+import Icon, { IconId } from "../Icon";
 
 type FAQItemProps = {
   title?: string;
@@ -20,11 +19,11 @@ const FAQListItem: React.FC<FAQItemProps> = ({
   return (
     <ListItem isOpen={isOpen}>
       <OpenItemButton onClick={onClick}>
-        {/* <SvgIcons
-          icon={IconsMap.materialArrowRight}
+        <ItemIcon
+          isOpen={isOpen}
+          id={IconId.keyboard_arrow_right}
           size="24px"
-          style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }}
-        /> */}
+        />
         <span>{title}</span>
       </OpenItemButton>
 
@@ -35,7 +34,7 @@ const FAQListItem: React.FC<FAQItemProps> = ({
   );
 };
 
-export const ListItem = styled.li<{ isOpen: boolean }>`
+const ListItem = styled.li<{ isOpen: boolean }>`
   background-color: ${({ isOpen }) => (isOpen ? "#ffffff" : "#f7f6f0")};
 
   box-shadow: -40px 20px 100px rgba(163, 159, 139, 0.1);
@@ -50,7 +49,7 @@ export const ListItem = styled.li<{ isOpen: boolean }>`
   transition: all var(--timing-function__main);
 `;
 
-export const OpenItemButton = styled.button`
+const OpenItemButton = styled.button`
   display: flex;
   gap: 20px;
 
@@ -71,7 +70,7 @@ export const OpenItemButton = styled.button`
   border-radius: 10px;
 `;
 
-export const ItemDescription = styled.div<{ isOpen: boolean }>`
+const ItemDescription = styled.div<{ isOpen: boolean }>`
   font-weight: 400;
   font-size: 18px;
   line-height: 1.89;
@@ -85,9 +84,13 @@ export const ItemDescription = styled.div<{ isOpen: boolean }>`
 
   transition: all var(--timing-function__main);
 `;
-export const ItemDescriptionInner = styled.span`
+const ItemDescriptionInner = styled.span`
   display: block;
-  padding: 21px 0 21px 0;
+  padding-bottom: 25px;
 `;
-
+const ItemIcon = styled(Icon)<{ isOpen: boolean }>`
+  color: ${({ isOpen, theme }: { isOpen: boolean; theme: ThemeType }) =>
+    isOpen ? theme.actionGreen : theme.bageDark};
+  transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "rotate(0deg)")};
+`;
 export default FAQListItem;
