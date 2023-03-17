@@ -1,3 +1,4 @@
+import { ThemeType } from "@/styles/theme";
 import testData from "@/testData";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,6 +35,8 @@ const Section = styled.section`
   align-items: flex-start;
   justify-content: center;
 
+  background: ${({ theme }: { theme: ThemeType }) => theme.backgroundGradient};
+
   @media screen and (max-width: 768px) {
     flex-wrap: wrap-reverse;
   }
@@ -63,7 +66,7 @@ const Title = styled.h3`
 `;
 
 const SubTitle = styled.p`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.89;
   color: var(--textBlackClr);

@@ -27,7 +27,7 @@ const HeroImageContainer = styled.div`
   width: 100%;
 
   height: 429px;
-  padding: 50px;
+  padding-top: 76px;
   overflow: hidden;
 `;
 

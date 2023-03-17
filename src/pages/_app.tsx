@@ -1,4 +1,5 @@
 import "@/styles/globals.scss";
+import "../styles/icons.scss";
 import { theme } from "@/styles/theme";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";

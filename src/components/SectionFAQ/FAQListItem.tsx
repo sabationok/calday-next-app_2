@@ -1,5 +1,6 @@
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
 
+import { ThemeType } from "@/styles/theme";
 import styled from "styled-components";
 
 type FAQItemProps = {
@@ -53,11 +54,12 @@ export const OpenItemButton = styled.button`
   display: flex;
   gap: 20px;
 
+  font-family: inherit;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.3;
   text-align: left;
-  color: var(--blackPrimary);
+  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
 
   width: 100%;
   padding: 21px 16px;
@@ -70,11 +72,11 @@ export const OpenItemButton = styled.button`
 `;
 
 export const ItemDescription = styled.div<{ isOpen: boolean }>`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.89;
 
-  color: var(--textBlackClr);
+  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
 
   max-height: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   padding: ${({ isOpen }) => (isOpen ? "0 16px 0 64px" : "0")};

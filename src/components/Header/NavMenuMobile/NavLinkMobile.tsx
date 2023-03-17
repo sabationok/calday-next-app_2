@@ -1,8 +1,12 @@
-import { INavLink } from "@/types/types";
+import { ThemeType } from "@/styles/theme";
 import Link from "next/link";
 import styled from "styled-components";
 
-const NavLinkMobile: React.FC<INavLink> = ({ path, name }) => {
+export type NavLinkProps = {
+  path: string;
+  name: string;
+};
+const NavLinkMobile: React.FC<NavLinkProps> = ({ path, name }) => {
   return (
     <li>
       <StyledLink href={path}>{name}</StyledLink>
@@ -11,17 +15,16 @@ const NavLinkMobile: React.FC<INavLink> = ({ path, name }) => {
 };
 
 const StyledLink = styled(Link)`
-  font-family: "Mark Pro", sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 0.75;
-  color: var(--blackPrimary);
+  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
   transition: all var(--timing-function__main);
   &:hover {
-    color: var(--actionOrangeClr);
+    color: ${({ theme }: { theme: ThemeType }) => theme.actionOrange};
   }
   &:active {
-    color: var(--brownLightClr);
+    color: ${({ theme }: { theme: ThemeType }) => theme.brownLight};
   }
 `;
 

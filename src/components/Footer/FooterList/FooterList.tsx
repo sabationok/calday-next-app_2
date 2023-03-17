@@ -18,8 +18,8 @@ const FooterList: React.FC = () => {
         <Title>{useCases.title}</Title>
 
         <LinksList>
-          {useCases.links.map((link) => (
-            <LinksListItem key={link.link}>
+          {useCases.links.map((link, idx) => (
+            <LinksListItem key={idx}>
               <Link href="#">{link.name}</Link>
             </LinksListItem>
           ))}
@@ -30,8 +30,8 @@ const FooterList: React.FC = () => {
         <Title>{support.title}</Title>
 
         <LinksList>
-          {support.links.map((link) => (
-            <LinksListItem key={link.link}>
+          {support.links.map((link, idx) => (
+            <LinksListItem key={idx}>
               <Link href="#">{link.name}</Link>
             </LinksListItem>
           ))}
@@ -42,8 +42,8 @@ const FooterList: React.FC = () => {
         <Title>{blog.title}</Title>
 
         <LinksList>
-          {blog.links.map((link) => (
-            <LinksListItem key={link.link}>
+          {blog.links.map((link, idx) => (
+            <LinksListItem key={idx}>
               <Link href="#">{link.name}</Link>
             </LinksListItem>
           ))}

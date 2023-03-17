@@ -5,9 +5,12 @@ import styled from "styled-components";
 import testData from "@/testData";
 import { ThemeType } from "@/styles/theme";
 
-const Footer: React.FC = () => {
+type FooterProps = {
+  className: string;
+};
+const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <FooterContainer>
+    <FooterContainer className={className}>
       <SG.Container>
         <FooterWrapper>
           <FooterList />

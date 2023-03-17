@@ -41,8 +41,6 @@ const StyledFormCreateEvent = styled.form`
 
   width: max-content;
 
-  margin-bottom: 76px;
-
   width: 100%;
 
   @media screen and (min-width: 480px) {

@@ -34,28 +34,29 @@ const SectionShedulingInfo: React.FC<SectionType> = () => {
 };
 
 import styled from "styled-components";
+import { ThemeType } from "@/styles/theme";
 
 export const StyledSection = styled.section`
-  padding: 156px 0 0;
+  padding: 156px 0 115px;
+
+  background: ${({ theme }: { theme: ThemeType }) => theme.backgroundGradient};
 `;
 export const Title = styled.h2`
-  font-family: "Gilroy", sans-serif;
   font-weight: 800;
   font-size: 40px;
   line-height: 1.3;
   text-align: center;
-  color: var(--browmPrimeClr);
+  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
 
   padding: 0 15px;
   margin-bottom: 6px;
 `;
 export const SubTitle = styled.p`
-  font-family: "Gilroy", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.89;
   text-align: center;
-  color: var(--blackPrimary);
+  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
 
   padding: 0 15px;
   margin-bottom: 78px;
@@ -67,7 +68,7 @@ export const TransfersList = styled.ul`
   justify-content: center;
   gap: 20px;
 
-  margin: 0 auto 115px;
+  margin: 0 auto;
 `;
 
 export default SectionShedulingInfo;

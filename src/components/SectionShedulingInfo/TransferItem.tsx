@@ -56,10 +56,10 @@ flex-grow: 1; */
     padding: 36px 30px 24px;
   }
 `;
-const TransferWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
+// const TransferWrapper = styled.div`
+//   display: flex;
+//   align-items: center;
+// `;
 const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -68,7 +68,6 @@ const TitleWrapper = styled.div`
   margin-bottom: 28px;
 `;
 const Title = styled.p`
-  font-family: "Gilroy", sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 1.08;
@@ -83,7 +82,6 @@ const DescrList = styled.ul`
   padding-left: 20px;
 `;
 const DescrListItem = styled.li`
-  font-family: "Mark Pro", sans-serif;
   font-weight: 450;
   font-size: 16px;
   line-height: 2;

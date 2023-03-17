@@ -1,4 +1,4 @@
-import Profits from "./Profits/ProfitItem/ProfitsList";
+import Profits from "./Profits/ProfitsList";
 import FormCreateEvent from "./FormCreateEvent";
 import HeroImage from "./HeroImage/HeroImage";
 import HeroTitle from "./HeroTitle";
@@ -7,6 +7,7 @@ import testData from "@/testData";
 
 import SG from "@/styles";
 import styled from "styled-components";
+import { ThemeType } from "@/styles/theme";
 
 const SectionHero: React.FC = () => {
   const { title, subTitle, profitsList } = testData.heroSectionData;
@@ -41,6 +42,8 @@ const StyledSectionHero = styled.section`
 
   width: 100%;
   padding: 84px 0 0;
+
+  background: ${({ theme }: { theme: ThemeType }) => theme.backgroundGradient};
 `;
 
 const FlexWrapper = styled.div`

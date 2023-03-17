@@ -32,7 +32,7 @@ const StyledButton = styled.button`
   justify-content: space-between;
   gap: 21px;
 
-  font-family: "Mark Pro", sans-serif;
+  font-family: inherit;
   font-weight: 700;
 
   user-select: none;

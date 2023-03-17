@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
 import Layout from "@/components/Layout";
 
 import SectionHero from "./SectionHero/SectionHero";
@@ -7,7 +5,7 @@ import SectionFeatures from "./SectionFeatures/SectionFeatures";
 import SectionShedulingInfo from "./SectionShedulingInfo/SectionShedulingInfo";
 import SectionDownloadApp from "./SectionDownloadApp/SectionDownloadApp";
 import SectionFAQ from "./SectionFAQ/SectionFAQ";
-import SectionBuyNow from "./SectionBuyNow/SectionBuyNow";
+// import SectionBuyNow from "./SectionBuyNow/SectionBuyNow";
 
 import testData from "@/testData";
 
@@ -15,23 +13,17 @@ const HomePage: React.FC = () => {
   const { shedulingSectionData } = testData;
   return (
     <Layout>
-      <Header />
+      <SectionHero />
 
-      <main>
-        <SectionHero />
+      <SectionFeatures />
 
-        <SectionFeatures />
+      <SectionShedulingInfo {...shedulingSectionData} />
 
-        <SectionShedulingInfo {...shedulingSectionData} />
+      <SectionDownloadApp />
 
-        <SectionDownloadApp />
+      <SectionFAQ />
 
-        <SectionFAQ />
-
-        <SectionBuyNow />
-      </main>
-
-      <Footer />
+      {/* <SectionBuyNow /> */}
     </Layout>
   );
 };

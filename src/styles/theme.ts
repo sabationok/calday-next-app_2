@@ -17,11 +17,15 @@ export type ThemeType = {
   bntOutlineActive: string;
   timing_function__main: string;
   timing_function__long: string;
+  transparent: "transparent";
+  yelowLight: string;
+  white: string;
+  bageLight: string;
+  borderColorHover: string;
   desktopWidth: string;
 };
 export const theme = {
-  backgroundGradient:
-    "  background: linear-gradient(90deg, #ece9aa 1.16%, #f1cc97 80.04%);",
+  backgroundGradient: "linear-gradient(90deg, #ece9aa 1.16%, #f1cc97 80.04%);",
   linearGradient_border: "linear-gradient(165deg, #cc3dff 0%, #eda313 100%) 1",
   inearGradient_text:
     "linear-gradient(92.94deg, #cc3dff -4.13%, #eda313 101.31%)",
@@ -35,105 +39,92 @@ export const theme = {
   iconsDecor: " #544d3b",
   inputEmptyBackground: " #f7f6f0",
   bageBackground: "#eeede0",
-  bageDark: "#f2f0e4",
+  bageDark: "#D8B681",
   bagePrimary: " #f7f6f0",
+  bageLight: "#F2F0E4",
   bntOutlineActive: "#e9e7dd",
   timing_function__main: "250ms cubic-bezier(0.4, 0, 0.2, 1)",
   timing_function__long: " 500ms cubic-bezier(0.4, 0, 0.2, 1)",
+  transparent: "transparent",
+  yelowLight: "#FFF06B",
+  white: "#fff",
+  borderColorHover: "#2B2F36",
 
   desktopWidth: "960px",
 } as ThemeType;
 
-export const colors = {
-  activeOrange: "#EA8C1F",
-  primaryBlack: "#40464E",
-  white: "#fff",
-  bageDark: "#D8B681",
-  bageLight: "#F2F0E4",
-  bagePrimary: "#F7F6F0",
-  yelowLight: "#FFF06B",
-  blackPrimary: "#372F2A",
-  transparent: "transparent",
-  borderColorHover: "#2B2F36",
-
-  backgroundGradient:
-    "linear-gradient(#fff, #fff) padding-box, linear-gradient( 120deg, rgba(205, 62, 255, 1) 0%, rgba(237, 163, 20, 1) 100%) border-box",
-  backgroundGradientActive:
-    "linear-gradient(#F2F0E4, #F2F0E4) padding-box, linear-gradient( 120deg, rgba(205, 62, 255, 1) 0%, rgba(237, 163, 20, 1) 100%) border-box",
-};
-
 export const paramsMap = {
   backgroundColor: {
-    filled: colors.blackPrimary,
-    outlinedLarge: colors.white,
-    outlinedLargeGradient: colors.backgroundGradientActive,
-    outlinedSmall: colors.transparent,
+    filled: theme.blackPrimary,
+    outlinedLarge: theme.white,
+    outlinedLargeGradient: theme.backgroundGradient,
+    outlinedSmall: theme.transparent,
   },
   borderColor: {
-    filled: colors.bageDark,
-    outlinedLarge: colors.bageDark,
-    outlinedLargeGradient: colors.transparent,
-    outlinedSmall: colors.bageDark,
+    filled: theme.bageDark,
+    outlinedLarge: theme.bageDark,
+    outlinedLargeGradient: theme.transparent,
+    outlinedSmall: theme.bageDark,
   },
   fill: {
-    filled: colors.yelowLight,
-    outlinedLarge: colors.blackPrimary,
-    outlinedLargeGradient: colors.activeOrange,
-    outlinedSmall: colors.yelowLight,
+    filled: theme.yelowLight,
+    outlinedLarge: theme.blackPrimary,
+    outlinedLargeGradient: theme.actionOrange,
+    outlinedSmall: theme.yelowLight,
   },
   color: {
-    filled: colors.white,
-    outlinedLarge: colors.primaryBlack,
-    outlinedLargeGradient: colors.primaryBlack,
-    outlinedSmall: colors.primaryBlack,
+    filled: theme.white,
+    outlinedLarge: theme.blackPrimary,
+    outlinedLargeGradient: theme.blackPrimary,
+    outlinedSmall: theme.blackPrimary,
   },
   backgroundColorHover: {
-    filled: colors.blackPrimary,
-    outlinedLarge: colors.white,
-    outlinedLargeGradient: colors.white,
-    outlinedSmall: colors.transparent,
+    filled: theme.blackPrimary,
+    outlinedLarge: theme.white,
+    outlinedLargeGradient: theme.white,
+    outlinedSmall: theme.transparent,
   },
   borderColorHover: {
-    filled: colors.borderColorHover,
-    outlinedLarge: colors.bageDark,
-    outlinedLargeGradient: colors.transparent,
-    outlinedSmall: colors.activeOrange,
+    filled: theme.borderColorHover,
+    outlinedLarge: theme.bageDark,
+    outlinedLargeGradient: theme.transparent,
+    outlinedSmall: theme.actionOrange,
   },
   fillHover: {
-    filled: colors.white,
-    outlinedLarge: colors.primaryBlack,
-    outlinedLargeGradient: colors.activeOrange,
-    outlinedSmall: colors.activeOrange,
+    filled: theme.white,
+    outlinedLarge: theme.blackPrimary,
+    outlinedLargeGradient: theme.actionOrange,
+    outlinedSmall: theme.actionOrange,
   },
   colorHover: {
-    filled: colors.white,
+    filled: theme.white,
     outlinedLarge: "",
-    outlinedLargeGradient: colors.primaryBlack,
-    outlinedSmall: colors.primaryBlack,
+    outlinedLargeGradient: theme.blackPrimary,
+    outlinedSmall: theme.blackPrimary,
   },
   backgroundColorActive: {
-    filled: colors.blackPrimary,
-    outlinedLarge: colors.bagePrimary,
+    filled: theme.blackPrimary,
+    outlinedLarge: theme.bagePrimary,
     outlinedLargeGradient: "",
     outlinedSmall: "#F7F6F0",
   },
   borderColorActive: {
-    filled: colors.bageDark,
-    outlinedLarge: colors.bageDark,
-    outlinedLargeGradient: colors.transparent,
+    filled: theme.bageDark,
+    outlinedLarge: theme.bageDark,
+    outlinedLargeGradient: theme.transparent,
     outlinedSmall: "#E9E7DD",
   },
   fillActive: {
-    filled: colors.bageLight,
-    outlinedLarge: colors.bageDark,
-    outlinedLargeGradient: colors.activeOrange,
-    outlinedSmall: colors.primaryBlack,
+    filled: theme.bageLight,
+    outlinedLarge: theme.bageDark,
+    outlinedLargeGradient: theme.actionOrange,
+    outlinedSmall: theme.blackPrimary,
   },
   colorActive: {
-    filled: colors.bageLight,
-    outlinedLarge: colors.bageDark,
-    outlinedLargeGradient: colors.primaryBlack,
-    outlinedSmall: colors.primaryBlack,
+    filled: theme.bageLight,
+    outlinedLarge: theme.bageDark,
+    outlinedLargeGradient: theme.blackPrimary,
+    outlinedSmall: theme.blackPrimary,
   },
   borderRadius: {
     filled: "8px",
@@ -180,7 +171,7 @@ export const paramsMap = {
   background: {
     filled: "",
     outlinedLarge: "",
-    outlinedLargeGradient: colors.backgroundGradient,
+    outlinedLargeGradient: theme.backgroundGradient,
     outlinedSmall: "",
   },
   backgroundActive: {

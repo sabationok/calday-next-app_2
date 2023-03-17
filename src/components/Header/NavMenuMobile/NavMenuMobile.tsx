@@ -1,4 +1,6 @@
 import Button from "@/components/Button";
+import Icon, { IconId } from "@/components/Icon";
+import { ThemeType } from "@/styles/theme";
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
 import { navLinks } from "@/testData/testData.data";
 import { useState } from "react";
@@ -17,7 +19,7 @@ const NavMenuMobile: React.FC = () => {
   return (
     <StNavMenuMobileContainer>
       <StNavMenuMobileButton onClick={handleMenuOpen}>
-        {/* <SvgIcons icon={IconsMap.menuBurger} size="21px" /> */}
+        <Icon id={IconId.burger} size="21px" />
       </StNavMenuMobileButton>
 
       <StNavMenuMobile {...{ isOpen }}>
@@ -25,7 +27,7 @@ const NavMenuMobile: React.FC = () => {
           <Logo />
 
           <StNavMenuMobileButton onClick={handleMenuOpen}>
-            {/* <SvgIcons icon={IconsMap.close} size="21px" /> */}
+            <Icon id={IconId.close} size="21px" />
           </StNavMenuMobileButton>
         </StNavMenuMobileHeader>
 
@@ -37,7 +39,7 @@ const NavMenuMobile: React.FC = () => {
 
         <Button type="button" variant="filled">
           <span>Sign Up/ Login</span>
-          {/* <SvgIcons icon={IconsMap.arrowRight} size="15px" /> */}
+          <Icon id={IconId.arrow_right} size="21px" />
         </Button>
       </StNavMenuMobile>
     </StNavMenuMobileContainer>
@@ -64,7 +66,7 @@ export const StNavMenuMobile = styled.nav<{ isOpen: boolean }>`
   height: 100vh;
   padding-bottom: 69px;
 
-  background-color: var(--bageDarkClr);
+  background-color: ${({ theme }: { theme: ThemeType }) => theme.bageLight};
 `;
 export const StNavMenuMobileHeader = styled.header`
   display: flex;

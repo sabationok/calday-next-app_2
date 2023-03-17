@@ -44,7 +44,6 @@ export const SectionContainer = styled.div`
   }
 `;
 export const FeaturesTitle = styled.h2`
-  font-family: "Gilroy", sans-serif;
   font-weight: 800;
   font-size: 40px;
   line-height: 1.3;

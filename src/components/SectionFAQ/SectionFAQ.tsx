@@ -3,6 +3,7 @@ import FAQListItem from "./FAQListItem";
 import testData from "@/testData";
 import styled from "styled-components";
 import SG from "@/styles";
+import { ThemeType } from "@/styles/theme";
 
 const { faqList } = testData.faqSectionData;
 
@@ -38,17 +39,16 @@ const SectionFAQ: React.FC = () => {
 export const Section = styled.section`
   padding: 78px 0 130px;
   min-height: 150px;
-  background-color: var(--bageBackgroundClr);
+  background-color: ${({ theme }: { theme: ThemeType }) =>
+    theme.bageBackground};
 `;
 
 export const Title = styled.h2`
-  font-family: "Gilroy", sans-serif;
-
   font-weight: 800;
   font-size: 40px;
   line-height: 1.3;
   text-align: center;
-  color: var(--brownPrimeClr);
+  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
 
   text-transform: uppercase;
 

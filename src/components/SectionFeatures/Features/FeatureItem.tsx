@@ -53,15 +53,18 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   );
 };
 
-const StyledFeatureItem = styled.li<
-  ThemedStyledProps<{ isActive?: boolean }, ThemeType>
->`
+const StyledFeatureItem = styled.li<{ isActive?: boolean }>`
   cursor: default;
 
   overflow: hidden;
 
-  background-color: ${({ isActive, theme }) =>
-    isActive ? theme.bagePrimary : "transparent"};
+  background-color: ${({
+    isActive,
+    theme,
+  }: {
+    isActive?: boolean;
+    theme: ThemeType;
+  }) => (isActive ? theme.bagePrimary : "transparent")};
 
   fill: ${({ isActive }) => (isActive ? "#62C45B" : "#D8B682")};
 
@@ -74,6 +77,7 @@ const StyledFeatureItem = styled.li<
 `;
 
 const FutureButton = styled.button`
+  font-family: inherit;
   display: grid;
   grid-template-columns: 26px 1fr;
   gap: 21px;

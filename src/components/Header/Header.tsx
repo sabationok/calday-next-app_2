@@ -5,10 +5,13 @@ import HeaderRightSide from "./HeaderRightSide/HeaderRightSide";
 import SG from "@/styles";
 import styled from "styled-components";
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  className: string;
+};
+const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <>
-      <StHeader>
+      <StHeader className={className}>
         <SG.Container>
           <StHeaderGrid>
             <Logo />

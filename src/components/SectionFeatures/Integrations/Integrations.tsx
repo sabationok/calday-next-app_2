@@ -46,7 +46,7 @@ export const StyledIntegrations = styled.div`
   width: 100%;
   max-width: 1164px;
 
-  background-color: ${({ theme }: { theme: ThemeType }) => theme.bageDark};
+  background-color: ${({ theme }: { theme: ThemeType }) => theme.bageLight};
   border-radius: 20px;
 
   padding: 58px 58px 78px;
