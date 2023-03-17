@@ -1,5 +1,6 @@
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
 import styled from "styled-components";
+import Icon, { IconId } from "../Icon";
 
 export type TransferItemType = {
   from: string;
@@ -15,11 +16,11 @@ const TransferItem: React.FC<TransferItemType> = ({
   descrList,
 }) => {
   return (
-    <StyledTransferItem fill={fill}>
+    <StyledTransferItem>
       <TitleWrapper>
         <Title>{from}</Title>
 
-        {/* <SvgIcons icon={IconsMap.muiTransferArrows} /> */}
+        <ItemIcon id={IconId.transfer_arrows} color={fill} size="24px" />
 
         <Title>{to}</Title>
       </TitleWrapper>
@@ -33,19 +34,14 @@ const TransferItem: React.FC<TransferItemType> = ({
   );
 };
 
-const StyledTransferItem = styled.li<{ fill: string }>`
+const StyledTransferItem = styled.li`
   display: flex;
   flex-direction: column;
-
-  fill: ${({ fill }) => fill};
 
   padding: 30px 20px 20px;
 
   width: 100%;
   height: 335px;
-
-  /* flex-basis: 230px;
-flex-grow: 1; */
 
   background: #feffdf;
   border-radius: 10px;
@@ -56,10 +52,6 @@ flex-grow: 1; */
     padding: 36px 30px 24px;
   }
 `;
-// const TransferWrapper = styled.div`
-//   display: flex;
-//   align-items: center;
-// `;
 const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -85,6 +77,9 @@ const DescrListItem = styled.li`
   font-weight: 450;
   font-size: 16px;
   line-height: 2;
+`;
+const ItemIcon = styled(Icon)<{ color?: string }>`
+  color: ${({ color }) => color};
 `;
 
 export default TransferItem;
