@@ -2,7 +2,6 @@ import { useState } from "react";
 import testData from "@/testData";
 import FeatureItem from "./FeatureItem";
 import Image from "next/image";
-import { theme } from "@/styles/theme";
 
 import styled from "styled-components";
 

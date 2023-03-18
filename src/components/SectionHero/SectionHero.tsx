@@ -17,11 +17,11 @@ const SectionHero: React.FC = () => {
   return (
     <StyledSectionHero>
       <BackgroundHeroItems>
-        <BackgroundAvatarItem top="15px" left="0">
+        <BackgroundAvatarItem top="15px" left="15px">
           <Image src={images.HeroAvatarLeft_2x} alt="" width={200} />
         </BackgroundAvatarItem>
 
-        <BackgroundAvatarItem top="115px" right="0">
+        <BackgroundAvatarItem top="115px" right="15px">
           <Image src={images.HeroAvatarRight_2x} alt="" width={279} />
         </BackgroundAvatarItem>
       </BackgroundHeroItems>
@@ -57,8 +57,8 @@ const StyledSectionHero = styled.section`
 `;
 
 const FlexWrapper = styled.div`
-  position: static;
-  z-index: 5;
+  position: relative;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,17 +68,23 @@ const BackgroundHeroItems = styled.div`
   position: absolute;
   left: 50%;
   width: 100%;
-  max-width: 1212px;
+
+  max-width: 1245px;
 
   transform: translateX(-50%);
 
   outline: 1px solid tomato;
+
+  @media screen and (max-width: 1220px) {
+    display: none;
+  }
 `;
 const BackgroundAvatarItem = styled.div<{
   top?: string;
   left?: string;
   right?: string;
 }>`
+  position: absolute;
   top: ${({ top }) => top};
   left: ${({ left }) => left};
   right: ${({ right }) => right};

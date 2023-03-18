@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
-import styled, { ThemedStyledProps } from "styled-components";
+import styled from "styled-components";
 import { ThemeType } from "@/styles/theme";
 import Icon, { IconId } from "@/components/Icon";
 
