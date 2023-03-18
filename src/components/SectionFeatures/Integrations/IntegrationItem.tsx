@@ -16,7 +16,7 @@ const IntegrationItem: React.FC<IntegrationItemProps> = ({
   return (
     <StyledIntegrationItem>
       <IntegrationItemImgBox>
-        <Image src={icon} alt={alt} />
+        <Image src={icon} alt={alt} width={76} />
       </IntegrationItemImgBox>
 
       <IntegrationItemDescr>{descr}</IntegrationItemDescr>
@@ -37,8 +37,8 @@ export const StyledIntegrationItem = styled.li`
 `;
 
 export const IntegrationItemImgBox = styled.div`
-  width: 32px;
-  height: 32px;
+  width: 76px;
+  height: 76px;
 `;
 export const IntegrationItemDescr = styled.span`
   font-family: "Mark Pro", sans-serif;

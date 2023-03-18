@@ -1,4 +1,4 @@
-import FooterList from "./FooterList/FooterList";
+import FooterMenuList from "./FooterMenuList";
 
 import SG from "@/styles";
 import styled from "styled-components";
@@ -13,7 +13,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     <FooterContainer className={className}>
       <SG.Container>
         <FooterWrapper>
-          <FooterList />
+          <FooterMenuList />
 
           <Copyright>{testData.footerData.copyright}</Copyright>
         </FooterWrapper>
@@ -42,6 +42,8 @@ export const Copyright = styled.p`
   font-weight: 400;
   font-size: 15px;
   line-height: 1.33;
+
+  cursor: default;
 
   color: ${({ theme }: { theme: ThemeType }) => theme.bagePrimary};
   text-align: center;

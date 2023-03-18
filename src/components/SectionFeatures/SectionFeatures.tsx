@@ -54,7 +54,7 @@ export const FeaturesTitle = styled.h2`
 
   margin-bottom: 30px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 960px) {
     margin-bottom: 55px;
     padding: 0 138px;
   }

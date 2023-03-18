@@ -25,12 +25,8 @@ const ProfitItem: React.FC<ProfitItemProps> = ({ icon, alt, title, descr }) => {
 const StyledProfitItem = styled.li`
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  @media screen and (min-width: 480px) {
-    align-items: flex-start;
-    flex-basis: 265px;
-  }
+  align-items: flex-start;
+  max-width: 265px;
 `;
 
 const ProfitItemImg = styled.div`

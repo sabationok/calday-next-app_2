@@ -2,6 +2,7 @@ import Image from "next/image";
 import EventItems from "./EventItems/EventItems";
 import testData from "@/testData";
 import styled from "styled-components";
+import images from "@/img";
 
 const HeroImage: React.FC = () => {
   const { image, alt } = testData.heroSectionData.heroImage;
@@ -13,6 +14,9 @@ const HeroImage: React.FC = () => {
       </HeroImageBox>
 
       <EventItems />
+      <HeroBackgroundimg>
+        <Image src={images.bckgrnd_element_hero} alt={""} />
+      </HeroBackgroundimg>
     </HeroImageContainer>
   );
 };
@@ -25,10 +29,19 @@ const HeroImageContainer = styled.div`
   position: relative;
 
   width: 100%;
+  height: 480px;
 
-  height: 429px;
   padding-top: 76px;
   overflow: hidden;
+  @media screen and (min-width: 960px) {
+    height: 429px;
+  }
+`;
+
+const HeroBackgroundimg = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
 `;
 
 const HeroImageBox = styled.div`

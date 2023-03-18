@@ -2,7 +2,7 @@ import testData from "@/testData";
 import Link from "next/link";
 import styled from "styled-components";
 
-const FooterList: React.FC = () => {
+const FooterMenuList: React.FC = () => {
   const { company, useCases, support, blog, contacts } = testData.footerData;
   return (
     <StyledFooterList>
@@ -55,7 +55,7 @@ const FooterList: React.FC = () => {
 
         <LinksList>
           <ListItemTextBold>
-            <a href={`mailto${contacts.email}`}>{contacts.email}</a>
+            <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
           </ListItemTextBold>
         </LinksList>
       </FooterListItem>
@@ -109,4 +109,4 @@ export const ListItemTextBold = styled.li`
   color: #ffffff;
 `;
 
-export default FooterList;
+export default FooterMenuList;

@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image";
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
 import styled, { ThemedStyledProps } from "styled-components";
 import { ThemeType } from "@/styles/theme";
+import Icon, { IconId } from "@/components/Icon";
 
 type FeatureItemProps = {
   icon: string | StaticImageData;
@@ -33,11 +34,11 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
           <TitleWrapper>
             <FutureTitle>{title}</FutureTitle>
 
-            {/* <SvgIcons
-              icon={IconsMap.materialArrowRight}
+            <ItemIcon
+              id={IconId.keyboard_arrow_right}
               size="24px"
-              style={{ transform: `rotate(${isActive ? 90 : 0}deg)` }}
-            /> */}
+              isActive={isActive}
+            />
           </TitleWrapper>
 
           <FutureDescr>{descr}</FutureDescr>
@@ -73,6 +74,14 @@ const StyledFeatureItem = styled.li<{ isActive?: boolean }>`
   @media screen and (min-width: 960px) {
     border-radius: 26px;
     background-color: ${({ isActive }) => (isActive ? "#fff" : "transparent")};
+  }
+`;
+const ItemIcon = styled(Icon)<{ isActive?: boolean }>`
+  color: ${({ theme }: { theme: ThemeType }) => theme.actionOrange};
+  transform: ${({ isActive }) => `rotate(${isActive ? 90 : 0}deg)`};
+
+  @media screen and (min-width: 960px) {
+    display: none;
   }
 `;
 

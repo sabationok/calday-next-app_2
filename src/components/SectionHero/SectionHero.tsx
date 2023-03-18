@@ -8,28 +8,38 @@ import testData from "@/testData";
 import SG from "@/styles";
 import styled from "styled-components";
 import { ThemeType } from "@/styles/theme";
+import Image from "next/image";
+import images from "@/img";
 
 const SectionHero: React.FC = () => {
   const { title, subTitle, profitsList } = testData.heroSectionData;
 
   return (
-    <>
-      <StyledSectionHero>
-        <SG.Container>
-          <FlexWrapper>
-            <HeroTitle>{title}</HeroTitle>
+    <StyledSectionHero>
+      <BackgroundHeroItems>
+        <BackgroundAvatarItem top="15px" left="0">
+          <Image src={images.HeroAvatarLeft_2x} alt="" width={200} />
+        </BackgroundAvatarItem>
 
-            <HeroSubTitle>{subTitle}</HeroSubTitle>
+        <BackgroundAvatarItem top="115px" right="0">
+          <Image src={images.HeroAvatarRight_2x} alt="" width={279} />
+        </BackgroundAvatarItem>
+      </BackgroundHeroItems>
 
-            <FormCreateEvent />
-          </FlexWrapper>
-        </SG.Container>
+      <SG.Container>
+        <FlexWrapper>
+          <HeroTitle>{title}</HeroTitle>
 
-        <HeroImage />
+          <HeroSubTitle>{subTitle}</HeroSubTitle>
 
-        <Profits profitsList={profitsList} />
-      </StyledSectionHero>
-    </>
+          <FormCreateEvent />
+        </FlexWrapper>
+      </SG.Container>
+
+      <HeroImage />
+
+      <Profits profitsList={profitsList} />
+    </StyledSectionHero>
   );
 };
 
@@ -47,9 +57,36 @@ const StyledSectionHero = styled.section`
 `;
 
 const FlexWrapper = styled.div`
+  position: static;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const BackgroundHeroItems = styled.div`
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  max-width: 1212px;
+
+  transform: translateX(-50%);
+
+  outline: 1px solid tomato;
+`;
+const BackgroundAvatarItem = styled.div<{
+  top?: string;
+  left?: string;
+  right?: string;
+}>`
+  top: ${({ top }) => top};
+  left: ${({ left }) => left};
+  right: ${({ right }) => right};
+
+  background-image: url();
+  outline: 1px solid tomato;
+
+  width: 350px;
 `;
 
 export default SectionHero;

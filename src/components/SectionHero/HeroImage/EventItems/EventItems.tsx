@@ -21,7 +21,7 @@ const EventItems: React.FC = () => {
 
 const EventItemsContainer = styled.div`
   position: absolute;
-  top: 156px;
+  top: calc(76px + 156px);
   left: 50%;
 
   width: 80vw;
@@ -32,8 +32,8 @@ const EventItemsContainer = styled.div`
 
   transform: translateX(-50%);
 
-  @media screen and (min-width: 768px) {
-    top: 187px;
+  @media screen and (min-width: 960px) {
+    top: 263px;
     max-height: 116px;
   }
 `;

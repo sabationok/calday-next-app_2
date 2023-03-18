@@ -39,13 +39,11 @@ const Icon: React.FC<IconProps> = ({
 };
 
 const StyledIcon = styled.div<IconProps>`
-  /* min-width: ${({ width, size }) => size || width || "18px"}; */
-
   color: ${({ color }) => color || "black"};
   &::before {
     display: block;
     font-size: ${({ width, size }) => size || width || "18px"};
-    /* min-width: ${({ width, size }) => size || width || "18px"}; */
+
     color: ${({ color }) => color};
   }
 `;

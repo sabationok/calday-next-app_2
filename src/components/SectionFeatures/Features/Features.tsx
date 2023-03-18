@@ -2,6 +2,7 @@ import { useState } from "react";
 import testData from "@/testData";
 import FeatureItem from "./FeatureItem";
 import Image from "next/image";
+import { theme } from "@/styles/theme";
 
 import styled from "styled-components";
 
@@ -50,10 +51,7 @@ const StyledFeatures = styled.div`
 
   @media screen and (min-width: 960px) {
     grid-template-columns: 1fr 1fr;
-    padding: 0 25px 0;
-  }
 
-  @media screen and (min-width: 1100px) {
     padding: 0 85px 0 119px;
   }
 `;
@@ -61,13 +59,6 @@ const StyledFeatures = styled.div`
 const FeaturesList = styled.ul`
   display: flex;
   flex-direction: column;
-
-  @media screen and (max-width: 480px) {
-    /* gap: 35px; */
-  }
-  @media screen and (min-width: 480px) {
-    /* gap: 15px; */
-  }
 `;
 
 const FeaturesIlustrationImage = styled.div`

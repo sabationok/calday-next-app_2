@@ -1,25 +1,32 @@
 import Button from "@/components/Button";
 import { ThemeType } from "@/styles/theme";
 import testData from "@/testData";
+import { useState } from "react";
 import styled from "styled-components";
 import { IconId } from "../Icon";
 
 const FormCreateEvent: React.FC = () => {
+  const [errorMessage, _setErrorMessage] = useState(null);
   const { createEventFormData } = testData.heroSectionData;
+
   return (
     <StyledFormCreateEvent>
       <Wrapper>
-        <InputsWrapper>
-          <InputText
-            placeholder={createEventFormData.eventInputPlaceholder}
-            name={createEventFormData.eventInputName}
-          />
+        <Inputs>
+          <InputsWrapper>
+            <InputText
+              placeholder={createEventFormData.eventInputPlaceholder}
+              name={createEventFormData.eventInputName}
+            />
 
-          <InputTime
-            placeholder={createEventFormData.timeInputPlaceholder}
-            name={createEventFormData.timeInputName}
-          />
-        </InputsWrapper>
+            <InputTime
+              placeholder={createEventFormData.timeInputPlaceholder}
+              name={createEventFormData.timeInputName}
+            />
+          </InputsWrapper>
+
+          {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+        </Inputs>
 
         <Button
           variant="filled"
@@ -53,15 +60,29 @@ const StyledFormCreateEvent = styled.form`
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+
+  align-items: start;
+
   width: 100%;
 
   gap: 10px;
 
   overflow: hidden;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 960px) {
     grid-template-columns: 1fr min-content;
     gap: 3px;
   }
+`;
+const Inputs = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+`;
+
+const ErrorMessage = styled.div`
+  font-weight: 450;
+  font-size: 13px;
+  color: ${({ theme }: { theme: ThemeType }) => theme.errorClr};
 `;
 
 const InputsWrapper = styled.div`
@@ -139,7 +160,7 @@ const FormNoteText = styled.span`
 
   color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 960px) {
     display: none;
   }
 `;

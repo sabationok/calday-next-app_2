@@ -22,6 +22,10 @@ import futureImg_4_2x from "./futureImg_4_2x.png";
 import iPhone_image_2x from "./iPhone_image_2x.png";
 import Google_Play from "./Google_Play.png";
 import App_Store from "./App_Store.png";
+import bckgrnd_element_hero from "./bckgrnd_element_hero.png";
+import bckgrnd_element_bottom from "./bckgrnd_element_bottom.png";
+import HeroAvatarLeft_2x from "./HeroAvatarLeft_2x.png";
+import HeroAvatarRight_2x from "./HeroAvatarRight_2x.png";
 
 const images = {
   CaldayLogo,
@@ -48,6 +52,10 @@ const images = {
   avatarRight,
   App_Store,
   Google_Play,
+  bckgrnd_element_hero,
+  bckgrnd_element_bottom,
+  HeroAvatarLeft_2x,
+  HeroAvatarRight_2x,
 };
 
 export default images;
