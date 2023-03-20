@@ -43,6 +43,7 @@ const StyledButton = styled.button`
 
   user-select: none;
   text-transform: uppercase;
+  white-space: nowrap;
 
   width: fit-content;
 

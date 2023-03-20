@@ -47,7 +47,8 @@ const Section = styled.section`
   align-items: flex-start;
   justify-content: center;
 
-  background: ${({ theme }: { theme: ThemeType }) => theme.backgroundGradient};
+  /* background: ${({ theme }: { theme: ThemeType }) =>
+    theme.backgroundGradient}; */
 
   @media screen and (max-width: 768px) {
     flex-wrap: wrap-reverse;

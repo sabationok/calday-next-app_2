@@ -1,6 +1,10 @@
 import testData from "@/testData";
 import TransferItem, { TransferItemType } from "./TransferItem";
+import styled from "styled-components";
+import { ThemeType } from "@/styles/theme";
+import images from "@/img";
 import SG from "@/styles";
+import Image from "next/image";
 
 type SectionType = {
   title: string;
@@ -12,6 +16,10 @@ const SectionShedulingInfo: React.FC<SectionType> = () => {
   const { title, subTitle, list } = testData.shedulingSectionData;
   return (
     <StyledSection>
+      <SectionTopBackground>
+        <Image src={images.bckgrnd_element_bottom} alt="" />
+      </SectionTopBackground>
+
       <SG.Container>
         <Title>{title}</Title>
 
@@ -33,15 +41,22 @@ const SectionShedulingInfo: React.FC<SectionType> = () => {
   );
 };
 
-import styled from "styled-components";
-import { ThemeType } from "@/styles/theme";
-
-export const StyledSection = styled.section`
+const StyledSection = styled.section`
+  position: relative;
   padding: 156px 0 115px;
 
-  background: ${({ theme }: { theme: ThemeType }) => theme.backgroundGradient};
+  /* background: ${({ theme }: { theme: ThemeType }) =>
+    theme.backgroundGradient}; */
 `;
-export const Title = styled.h2`
+
+const SectionTopBackground = styled.div`
+  position: absolute;
+  top: 0;
+  height: 0;
+
+  width: 100%;
+`;
+const Title = styled.h2`
   font-weight: 800;
   font-size: 40px;
   line-height: 1.3;
@@ -51,7 +66,7 @@ export const Title = styled.h2`
   padding: 0 15px;
   margin-bottom: 6px;
 `;
-export const SubTitle = styled.p`
+const SubTitle = styled.p`
   font-weight: 400;
   font-size: 18px;
   line-height: 1.89;
@@ -62,7 +77,7 @@ export const SubTitle = styled.p`
   margin-bottom: 78px;
 `;
 
-export const TransfersList = styled.ul`
+const TransfersList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

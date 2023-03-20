@@ -5,25 +5,32 @@ import SectionFeatures from "./SectionFeatures/SectionFeatures";
 import SectionShedulingInfo from "./SectionShedulingInfo/SectionShedulingInfo";
 import SectionDownloadApp from "./SectionDownloadApp/SectionDownloadApp";
 import SectionFAQ from "./SectionFAQ/SectionFAQ";
-// import SectionBuyNow from "./SectionBuyNow/SectionBuyNow";
+import SectionBuyNow from "./SectionBuyNow/SectionBuyNow";
 
 import testData from "@/testData";
+import SG from "@/styles";
 
 const HomePage: React.FC = () => {
   const { shedulingSectionData } = testData;
   return (
     <Layout>
-      <SectionHero />
+      <SG.BackgroundGradient>
+        <SectionHero />
+      </SG.BackgroundGradient>
 
       <SectionFeatures />
 
-      <SectionShedulingInfo {...shedulingSectionData} />
+      <SG.BackgroundGradient>
+        <SectionShedulingInfo {...shedulingSectionData} />
 
-      <SectionDownloadApp />
+        <SectionDownloadApp />
+      </SG.BackgroundGradient>
 
       <SectionFAQ />
 
-      {/* <SectionBuyNow /> */}
+      <SG.BackgroundGradient>
+        <SectionBuyNow />
+      </SG.BackgroundGradient>
     </Layout>
   );
 };

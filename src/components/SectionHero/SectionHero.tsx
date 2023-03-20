@@ -53,7 +53,8 @@ const StyledSectionHero = styled.section`
   width: 100%;
   padding: 84px 0 0;
 
-  background: ${({ theme }: { theme: ThemeType }) => theme.backgroundGradient};
+  /* background: ${({ theme }: { theme: ThemeType }) =>
+    theme.backgroundGradient}; */
 `;
 
 const FlexWrapper = styled.div`
@@ -73,8 +74,6 @@ const BackgroundHeroItems = styled.div`
 
   transform: translateX(-50%);
 
-  outline: 1px solid tomato;
-
   @media screen and (max-width: 1220px) {
     display: none;
   }
@@ -90,7 +89,6 @@ const BackgroundAvatarItem = styled.div<{
   right: ${({ right }) => right};
 
   background-image: url();
-  outline: 1px solid tomato;
 
   width: 350px;
 `;

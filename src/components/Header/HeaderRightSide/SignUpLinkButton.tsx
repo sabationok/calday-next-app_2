@@ -30,11 +30,11 @@ const StLink = styled(Link)<SignUpLinkButtonProps>`
   justify-content: space-between;
   gap: 21px;
 
-  font-family: "Mark Pro", sans-serif;
   font-weight: 700;
 
   user-select: none;
   text-transform: uppercase;
+  white-space: nowrap;
 
   width: fit-content;
 

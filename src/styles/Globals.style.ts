@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeType } from "./theme";
 
 export const Container = styled.div`
   width: 100%;
@@ -10,4 +11,9 @@ export const Container = styled.div`
   @media screen and (min-width: 960px) {
     padding: 0 20px;
   }
+`;
+export const BackgroundGradient = styled.div`
+  width: 100%;
+
+  background: ${({ theme }: { theme: ThemeType }) => theme.backgroundGradient};
 `;

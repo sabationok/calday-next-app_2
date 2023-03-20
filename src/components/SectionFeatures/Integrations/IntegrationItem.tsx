@@ -30,7 +30,7 @@ export const StyledIntegrationItem = styled.li`
   align-items: center;
   gap: 21px;
 
-  /* max-width: 215px; */
+  max-width: 215px;
 
   flex-basis: 180px;
   flex-grow: 1;

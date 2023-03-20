@@ -29,8 +29,6 @@ const Title = styled.h1`
 
   color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
 
-  outline: 1px solid tomato;
-
   @media screen and (min-width: 375px) {
     font-size: 34px;
     line-height: 1.08;

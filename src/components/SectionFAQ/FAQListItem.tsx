@@ -1,5 +1,5 @@
 import { ThemeType } from "@/styles/theme";
-import styled from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 import Icon, { IconId } from "../Icon";
 
 type FAQItemProps = {
@@ -8,6 +8,11 @@ type FAQItemProps = {
   onClick: React.MouseEventHandler;
   isOpen?: boolean;
   idx?: number;
+  theme?: DefaultTheme;
+};
+type StyledProps = {
+  isOpen?: boolean;
+  theme?: ThemeType;
 };
 
 const FAQListItem: React.FC<FAQItemProps> = ({
@@ -34,7 +39,7 @@ const FAQListItem: React.FC<FAQItemProps> = ({
   );
 };
 
-const ListItem = styled.li<{ isOpen: boolean }>`
+const ListItem = styled.li<StyledProps>`
   background-color: ${({ isOpen }) => (isOpen ? "#ffffff" : "#f7f6f0")};
 
   box-shadow: -40px 20px 100px rgba(163, 159, 139, 0.1);
@@ -49,7 +54,7 @@ const ListItem = styled.li<{ isOpen: boolean }>`
   transition: all var(--timing-function__main);
 `;
 
-const OpenItemButton = styled.button`
+const OpenItemButton = styled.button<StyledProps>`
   display: flex;
   gap: 20px;
 
@@ -58,7 +63,7 @@ const OpenItemButton = styled.button`
   font-size: 20px;
   line-height: 1.3;
   text-align: left;
-  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
+  color: ${({ theme }: StyledProps) => theme?.blackPrimary};
 
   width: 100%;
   padding: 21px 16px;
@@ -70,12 +75,12 @@ const OpenItemButton = styled.button`
   border-radius: 10px;
 `;
 
-const ItemDescription = styled.div<{ isOpen: boolean }>`
+const ItemDescription = styled.div<StyledProps>`
   font-weight: 400;
   font-size: 18px;
   line-height: 1.89;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
+  color: ${({ theme }: StyledProps) => theme?.blackPrimary};
 
   max-height: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   padding: ${({ isOpen }) => (isOpen ? "0 16px 0 64px" : "0")};
@@ -88,9 +93,9 @@ const ItemDescriptionInner = styled.span`
   display: block;
   padding-bottom: 25px;
 `;
-const ItemIcon = styled(Icon)<{ isOpen: boolean }>`
-  color: ${({ isOpen, theme }: { isOpen: boolean; theme: ThemeType }) =>
-    isOpen ? theme.actionGreen : theme.bageDark};
+const ItemIcon = styled(Icon)<StyledProps>`
+  color: ${({ isOpen, theme }: StyledProps) =>
+    isOpen ? theme?.actionGreen : theme?.bageDark};
   transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "rotate(0deg)")};
 `;
 export default FAQListItem;

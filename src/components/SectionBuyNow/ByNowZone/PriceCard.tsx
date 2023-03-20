@@ -1,5 +1,7 @@
 import Button from "@/components/Button";
-// import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
+import Icon, { IconId } from "@/components/Icon";
+import { ThemeType } from "@/styles/theme";
+import styled from "styled-components";
 
 export interface IPriceCard {
   isPremium: boolean;
@@ -41,7 +43,11 @@ const PriceCard: React.FC<IPriceCard> = ({
         {options.map((opt) => (
           <ListOption isPremium={isPremium} key={opt}>
             <IconBox isPremium={isPremium}>
-              {/* <SvgIcons icon={IconsMap.muiDone} size="16px" /> */}
+              <StyledIconCheck
+                id={IconId.check}
+                size="14px"
+                isPremium={isPremium}
+              />
             </IconBox>
 
             <ListOption isPremium={isPremium}>{opt}</ListOption>
@@ -49,20 +55,23 @@ const PriceCard: React.FC<IPriceCard> = ({
         ))}
       </OptionsList>
 
-      <Button
+      <StyledButton
         variant={isPremium ? "outlinedLargeGradient" : "outlinedLarge"}
         style={{ width: "100%" }}
+        iconId={IconId.arrow_right}
       >
         <span>{buttonTitle}</span>
-        {/* <SvgIcons icon={IconsMap.arrowRight} /> */}
-      </Button>
+      </StyledButton>
     </Card>
   );
 };
 
-import styled from "styled-components";
+interface IStyledProps {
+  isPremium?: boolean;
+  theme?: ThemeType;
+}
 
-export const Card = styled.li<{ isPremium?: boolean }>`
+const Card = styled.li<IStyledProps>`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -72,15 +81,13 @@ export const Card = styled.li<{ isPremium?: boolean }>`
   flex-shrink: 1;
 
   max-width: 335px;
-  min-height: 574px;
+  /* min-height: 574px; */
 
   overflow: hidden;
   padding: 30px;
 
-  background: ${({ isPremium }) =>
-    isPremium
-      ? "linear-gradient(#fff, #fff) padding-box, linear-gradient( 120deg, rgba(205, 62, 255, 1) 0%, rgba(237, 163, 20, 1) 100%) border-box"
-      : "#fff"};
+  background: ${({ isPremium, theme }: IStyledProps) =>
+    isPremium ? theme?.linearGradient_border : theme?.white};
   border: 4px solid transparent;
   border-radius: 20px;
 
@@ -89,7 +96,7 @@ export const Card = styled.li<{ isPremium?: boolean }>`
     transform: scale(1.05);
   }
 `;
-export const CardTitle = styled.p<{ isPremium?: boolean }>`
+const CardTitle = styled.p<IStyledProps>`
   font-family: "Gilroy", sans-serif;
   font-weight: ${({ isPremium }) => (isPremium ? 700 : 400)};
   font-size: 30px;
@@ -105,19 +112,8 @@ export const CardTitle = styled.p<{ isPremium?: boolean }>`
     isPremium ? "transparent" : ""};
   background-clip: ${({ isPremium }) => (isPremium ? "text" : "")};
 `;
-export const CardTitlePremium = styled.p`
-  font-family: "Gilroy", sans-serif;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 0.87;
-  text-transform: uppercase;
 
-  background: linear-gradient(94deg, #cc3dff -4.13%, #eda313 101.31%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-`;
-export const CardSubTitle = styled.span`
+const CardSubTitle = styled.span`
   font-family: "Caveat", sans-serif;
   font-weight: 400;
   font-size: 24px;
@@ -126,24 +122,23 @@ export const CardSubTitle = styled.span`
 
   margin-bottom: 31px;
 `;
-
-export const CardPriceBox = styled.div`
+const CardPriceBox = styled.div`
   display: flex;
   gap: 10px;
 `;
-export const CardPrice = styled.div`
+const CardPrice = styled.div`
   font-family: "Gilroy", sans-serif;
   font-weight: 700;
   font-size: 74px;
   line-height: 0.76;
   color: var(--textBlackClr);
 `;
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
-export const CardSale = styled.div`
+const CardSale = styled.div`
   font-family: "Mark Pro", sans-serif;
   font-weight: 700;
   font-size: 15px;
@@ -151,7 +146,7 @@ export const CardSale = styled.div`
 
   color: #62c45b;
 `;
-export const CardPeriod = styled.div`
+const CardPeriod = styled.div`
   font-family: "Mark Pro", sans-serif;
   font-weight: 400;
   font-size: 15px;
@@ -161,30 +156,28 @@ export const CardPeriod = styled.div`
   text-transform: lowercase;
 `;
 
-export const OptionsList = styled.ul`
+const OptionsList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 12px;
 
-  margin: 35px 0;
+  min-height: 275px;
+  width: 100%;
+  padding: 35px 0;
 
   flex-grow: 1;
 `;
-export const ListOption = styled.li<{ isPremium: boolean }>`
+const ListOption = styled.li<IStyledProps>`
   display: flex;
-  gap: 13px;
 
-  font-family: "Mark Pro", sans-serif;
+  gap: 13px;
   font-weight: 450;
   font-size: 16px;
   line-height: 1.5;
-  /* identical to box height, or 150% */
 
-  /* Primary_black */
-
-  color: var(--blackPrimary);
+  color: ${({ theme }: IStyledProps) => theme?.blackPrimary};
 `;
-export const IconBox = styled.div<{ isPremium: boolean }>`
+const IconBox = styled.div<IStyledProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,6 +189,15 @@ export const IconBox = styled.div<{ isPremium: boolean }>`
 
   border-radius: 50%;
   background-color: ${({ isPremium }) => (isPremium ? "#E6FBE5" : "#F8F8F8")};
+`;
+const StyledIconCheck = styled(Icon)<IStyledProps>`
+  color: ${({ theme, isPremium }: IStyledProps) =>
+    isPremium ? theme?.actionGreen : theme?.bageDark};
+`;
+const StyledButton = styled(Button)`
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 
 export default PriceCard;

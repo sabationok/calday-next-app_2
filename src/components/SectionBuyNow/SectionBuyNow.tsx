@@ -3,6 +3,9 @@ import testData from "@/testData";
 import ByNowZone from "./ByNowZone/ByNowZone";
 import { ThemeType } from "@/styles/theme";
 
+type StyledProps = {
+  theme: ThemeType;
+};
 const SectionBuyNow: React.FC = () => {
   return (
     <Section>
@@ -29,13 +32,15 @@ const Section = styled.section`
   padding: 34px 0 78px;
 
   min-height: 530px;
+
+  /* background: ${({ theme }: StyledProps) => theme.backgroundGradient}; */
 `;
 const SectionTopBackground = styled.div`
   position: absolute;
   top: 0;
   height: 0;
 
-  background-color: #eeede0;
+  background-color: ${({ theme }: StyledProps) => theme.bageBackground};
   width: 100%;
   min-height: 430px;
 `;
@@ -55,11 +60,11 @@ const Title = styled.h2`
   line-height: 1.3;
   text-align: center;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
+  color: ${({ theme }: StyledProps) => theme.brownPrime};
   padding-bottom: 3px;
 `;
 const SubTitle = styled.p`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.83;
   text-align: center;
@@ -70,11 +75,11 @@ const Description = styled.p`
   max-width: 529px;
   padding: 0 15px;
 
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.83;
   text-align: center;
-  color: ${({ theme }: { theme: ThemeType }) => theme.textBlack};
+  color: ${({ theme }: StyledProps) => theme.textBlack};
 
   margin: 0 auto;
 `;

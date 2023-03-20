@@ -13,6 +13,7 @@ export type ThemeType = {
   errorClr: string;
   inputEmptyBackground: string;
   bageBackground: string;
+  bageBackgroundSecondary: string;
   bageDark: string;
   bagePrimary: string;
   bntOutlineActive: string;
@@ -23,11 +24,12 @@ export type ThemeType = {
   white: string;
   bageLight: string;
   borderColorHover: string;
-  desktopWidth: string;
+  subTitleFontWeight: number;
 };
 export const theme = {
   backgroundGradient: "linear-gradient(90deg, #ece9aa 1.16%, #f1cc97 80.04%);",
-  linearGradient_border: "linear-gradient(165deg, #cc3dff 0%, #eda313 100%) 1",
+  linearGradient_border:
+    "linear-gradient(#fff, #fff) padding-box, linear-gradient( 120deg, rgba(205, 62, 255, 1) 0%, rgba(237, 163, 20, 1) 100%) border-box",
   inearGradient_text:
     "linear-gradient(92.94deg, #cc3dff -4.13%, #eda313 101.31%)",
   brownClr: "#372f2a",
@@ -41,6 +43,7 @@ export const theme = {
   iconsDecor: " #544d3b",
   inputEmptyBackground: " #f7f6f0",
   bageBackground: "#eeede0",
+  bageBackgroundSecondary: "#D9D9D9",
   bageDark: "#D8B681",
   bagePrimary: " #f7f6f0",
   bageLight: "#F2F0E4",
@@ -51,8 +54,7 @@ export const theme = {
   yelowLight: "#FFF06B",
   white: "#fff",
   borderColorHover: "#2B2F36",
-
-  desktopWidth: "960px",
+  subTitleFontWeight: 400,
 } as ThemeType;
 
 export const paramsMap = {
@@ -173,7 +175,7 @@ export const paramsMap = {
   background: {
     filled: "",
     outlinedLarge: "",
-    outlinedLargeGradient: theme.backgroundGradient,
+    outlinedLargeGradient: theme.linearGradient_border,
     outlinedSmall: "",
   },
   backgroundActive: {
