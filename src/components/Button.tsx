@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
 
 const BtnIcon = styled(Icon)``;
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,54 +47,47 @@ const StyledButton = styled.button`
 
   width: fit-content;
 
-  padding: ${({ variant }: ButtonProps) => paramsMap?.padding[variant]};
+  padding: ${({ variant }) => paramsMap?.padding[variant]};
 
-  font-size: ${({ variant }: ButtonProps) => paramsMap?.fontSize[variant]};
-  line-height: ${({ variant }: ButtonProps) => paramsMap?.lineHeight[variant]};
+  font-size: ${({ variant }) => paramsMap?.fontSize[variant]};
+  line-height: ${({ variant }) => paramsMap?.lineHeight[variant]};
 
-  min-height: ${({ variant }: ButtonProps) => paramsMap?.minHeight[variant]};
-  min-width: ${({ variant }: ButtonProps) => paramsMap?.minWidth[variant]};
+  min-height: ${({ variant }) => paramsMap?.minHeight[variant]};
+  min-width: ${({ variant }) => paramsMap?.minWidth[variant]};
 
-  background-color: ${({ variant }: ButtonProps) =>
-    paramsMap?.backgroundColor[variant]};
-  fill: ${({ variant }: ButtonProps) => paramsMap?.fill[variant]};
-  color: ${({ variant }: ButtonProps) => paramsMap?.color[variant]};
+  background-color: ${({ variant }) => paramsMap?.backgroundColor[variant]};
+  fill: ${({ variant }) => paramsMap?.fill[variant]};
+  color: ${({ variant }) => paramsMap?.color[variant]};
   ${BtnIcon} {
     color: ${({ variant }) => paramsMap?.fill[variant]};
   }
 
-  border-color: ${({ variant }: ButtonProps) =>
-    paramsMap?.borderColor[variant]};
-  border-radius: ${({ variant }: ButtonProps) =>
-    paramsMap?.borderRadius[variant]};
-  border-width: ${({ variant }: ButtonProps) =>
-    paramsMap?.borderWidth[variant]};
+  border-color: ${({ variant }) => paramsMap?.borderColor[variant]};
+  border-radius: ${({ variant }) => paramsMap?.borderRadius[variant]};
+  border-width: ${({ variant }) => paramsMap?.borderWidth[variant]};
 
   border-style: solid;
 
-  background: ${({ variant }: ButtonProps) => paramsMap?.background[variant]};
+  background: ${({ variant }) => paramsMap?.background[variant]};
   transition: all var(--timing-function__main);
 
   &:hover {
-    background-color: ${({ variant }: ButtonProps) =>
+    background-color: ${({ variant }) =>
       paramsMap?.backgroundColorHover[variant]};
-    fill: ${({ variant }: ButtonProps) => paramsMap?.fillHover[variant]};
-    color: ${({ variant }: ButtonProps) => paramsMap?.colorHover[variant]};
-    border-color: ${({ variant }: ButtonProps) =>
-      paramsMap?.borderColorHover[variant]};
+    fill: ${({ variant }) => paramsMap?.fillHover[variant]};
+    color: ${({ variant }) => paramsMap?.colorHover[variant]};
+    border-color: ${({ variant }) => paramsMap?.borderColorHover[variant]};
     ${BtnIcon} {
       color: ${({ variant }) => paramsMap?.fillHover[variant]};
     }
   }
   &:active {
-    background-color: ${({ variant }: ButtonProps) =>
+    background-color: ${({ variant }) =>
       paramsMap?.backgroundColorActive[variant]};
-    fill: ${({ variant }: ButtonProps) => paramsMap?.fillActive[variant]};
-    color: ${({ variant }: ButtonProps) => paramsMap?.colorActive[variant]};
-    border-color: ${({ variant }: ButtonProps) =>
-      paramsMap?.borderColorActive[variant]};
-    background: ${({ variant }: ButtonProps) =>
-      paramsMap?.backgroundActive[variant]};
+    fill: ${({ variant }) => paramsMap?.fillActive[variant]};
+    color: ${({ variant }) => paramsMap?.colorActive[variant]};
+    border-color: ${({ variant }) => paramsMap?.borderColorActive[variant]};
+    background: ${({ variant }) => paramsMap?.backgroundActive[variant]};
     ${BtnIcon} {
       color: ${({ variant }) => paramsMap?.fillActive[variant]};
     }
