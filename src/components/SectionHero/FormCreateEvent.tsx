@@ -1,9 +1,9 @@
-import Button from "@/components/Button";
-import { ThemeType } from "@/styles/theme";
+import Button from "@/components/atoms/Button";
+
 import testData from "@/testData";
 import { useState } from "react";
 import styled from "styled-components";
-import { IconId } from "../Icon";
+import { IconId } from "../atoms/Icon";
 
 const FormCreateEvent: React.FC = () => {
   const [errorMessage, _setErrorMessage] = useState(null);
@@ -82,7 +82,7 @@ const Inputs = styled.div`
 const ErrorMessage = styled.div`
   font-weight: 450;
   font-size: 13px;
-  color: ${({ theme }: { theme: ThemeType }) => theme.errorClr};
+  color: ${({ theme }) => theme.errorClr};
 `;
 
 const InputsWrapper = styled.div`
@@ -96,16 +96,15 @@ const InputsWrapper = styled.div`
 const StyledInput = styled.input`
   border-style: solid;
   border-width: 1px;
-  border-color: ${({ theme }: { theme: ThemeType }) => theme.bageDark};
+  border-color: ${({ theme }) => theme.bageDark};
   &:hover {
-    border-color: ${({ theme }: { theme: ThemeType }) => theme.actionOrange};
+    border-color: ${({ theme }) => theme.actionOrange};
   }
   &:focus {
     outline-style: none;
   }
   &:placeholder-shown {
-    background-color: ${({ theme }: { theme: ThemeType }) =>
-      theme.inputEmptyBackground};
+    background-color: ${({ theme }) => theme.inputEmptyBackground};
   }
   &::placeholder {
     font-weight: 450;
@@ -117,7 +116,7 @@ const StyledInput = styled.input`
     color: #86888b;
   }
   &:invalid {
-    outline: 1px solid ${({ theme }: { theme: ThemeType }) => theme.errorClr};
+    outline: 1px solid ${({ theme }) => theme.errorClr};
   }
 `;
 
@@ -158,7 +157,7 @@ const FormNoteText = styled.span`
 
   text-align: center;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
+  color: ${({ theme }) => theme.brownPrime};
 
   @media screen and (max-width: 960px) {
     display: none;

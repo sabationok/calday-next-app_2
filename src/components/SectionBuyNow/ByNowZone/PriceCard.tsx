@@ -1,6 +1,6 @@
-import Button from "@/components/Button";
-import Icon, { IconId } from "@/components/Icon";
-import { ThemeType } from "@/styles/theme";
+import Button from "@/components/atoms/Button";
+import Icon, { IconId } from "@/components/atoms/Icon";
+
 import styled from "styled-components";
 
 export interface IPriceCard {
@@ -50,7 +50,7 @@ const PriceCard: React.FC<IPriceCard> = ({
               />
             </IconBox>
 
-            <ListOption isPremium={isPremium}>{opt}</ListOption>
+            <span>{opt}</span>
           </ListOption>
         ))}
       </OptionsList>
@@ -68,7 +68,6 @@ const PriceCard: React.FC<IPriceCard> = ({
 
 interface IStyledProps {
   isPremium?: boolean;
-  theme?: ThemeType;
 }
 
 const Card = styled.li<IStyledProps>`
@@ -86,7 +85,7 @@ const Card = styled.li<IStyledProps>`
   overflow: hidden;
   padding: 30px;
 
-  background: ${({ isPremium, theme }: IStyledProps) =>
+  background: ${({ isPremium, theme }) =>
     isPremium ? theme?.linearGradient_border : theme?.white};
   border: 4px solid transparent;
   border-radius: 20px;
@@ -175,7 +174,7 @@ const ListOption = styled.li<IStyledProps>`
   font-size: 16px;
   line-height: 1.5;
 
-  color: ${({ theme }: IStyledProps) => theme?.blackPrimary};
+  color: ${({ theme }) => theme?.blackPrimary};
 `;
 const IconBox = styled.div<IStyledProps>`
   display: flex;
@@ -191,7 +190,7 @@ const IconBox = styled.div<IStyledProps>`
   background-color: ${({ isPremium }) => (isPremium ? "#E6FBE5" : "#F8F8F8")};
 `;
 const StyledIconCheck = styled(Icon)<IStyledProps>`
-  color: ${({ theme, isPremium }: IStyledProps) =>
+  color: ${({ theme, isPremium }) =>
     isPremium ? theme?.actionGreen : theme?.bageDark};
 `;
 const StyledButton = styled(Button)`

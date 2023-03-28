@@ -2,7 +2,6 @@ import testData from "@/testData";
 // import Image from "next/image";
 import IntegrationItem from "./IntegrationItem";
 import styled from "styled-components";
-import { ThemeType } from "@/styles/theme";
 
 const { integrations } = testData.featuresSectionData;
 
@@ -46,7 +45,7 @@ export const StyledIntegrations = styled.div`
   width: 100%;
   max-width: 1164px;
 
-  background-color: ${({ theme }: { theme: ThemeType }) => theme.bageLight};
+  background-color: ${({ theme }) => theme.bageLight};
   border-radius: 20px;
 
   padding: 58px 58px 78px;
@@ -60,7 +59,7 @@ export const IntegrationsTitle = styled.h3`
 
   margin-bottom: 8px;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
+  color: ${({ theme }) => theme.brownPrime};
 `;
 export const IntegrationsSubTitle = styled.p`
   font-weight: 400;
@@ -70,7 +69,7 @@ export const IntegrationsSubTitle = styled.p`
 
   margin-bottom: 63px;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
+  color: ${({ theme }) => theme.blackPrimary};
 `;
 export const IntegrationsList = styled.ul`
   display: flex;

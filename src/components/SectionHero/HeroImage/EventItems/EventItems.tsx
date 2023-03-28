@@ -1,17 +1,17 @@
 import testData from "@/testData";
-import DecoreItem from "./EventItem";
+import EventItem from "./EventItem";
 import styled from "styled-components";
 
 const EventItems: React.FC = () => {
   const { eventItemLeft, eventItemRight } = testData.heroSectionData.heroImage;
   return (
     <EventItemsContainer>
-      <DecoreItem
+      <EventItem
         {...eventItemLeft}
         style={{ top: 0, left: 0, minWidth: "253" }}
       />
 
-      <DecoreItem
+      <EventItem
         {...eventItemRight}
         style={{ bottom: 0, right: 0, minWidth: "265" }}
       />

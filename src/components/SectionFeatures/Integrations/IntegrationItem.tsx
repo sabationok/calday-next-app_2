@@ -1,4 +1,3 @@
-import { ThemeType } from "@/styles/theme";
 import Image, { StaticImageData } from "next/image";
 import styled from "styled-components";
 
@@ -47,7 +46,7 @@ export const IntegrationItemDescr = styled.span`
   line-height: 1.73;
   text-align: center;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.graySecondary};
+  color: ${({ theme }) => theme.graySecondary};
 `;
 
 export default IntegrationItem;

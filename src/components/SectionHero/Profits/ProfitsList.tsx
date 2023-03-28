@@ -2,7 +2,6 @@ import SG from "@/styles";
 import { ProfitItemProps } from "./ProfitItem";
 import ProfitItem from "./ProfitItem";
 import styled from "styled-components";
-import { ThemeType } from "@/styles/theme";
 
 type ProfitsProps = {
   profitsList: ProfitItemProps[];
@@ -31,7 +30,7 @@ const ListBackground = styled.div`
   min-width: 100%;
   min-height: 461px;
 
-  background-color: ${({ theme }: { theme: ThemeType }) => theme.bagePrimary};
+  background-color: ${({ theme }) => theme.bagePrimary};
 `;
 
 const Profits = styled.div`

@@ -1,4 +1,7 @@
+import { SectionDownloadAppProps } from "@/components/SectionDownloadApp/SectionDownloadApp";
+import { SectionFAQProps } from "@/components/SectionFAQ/SectionFAQ";
 import images from "@/img";
+import { StaticImageData } from "next/image";
 
 export const navLinks = [
   { name: "Features", path: "#" },
@@ -207,50 +210,43 @@ export const shedulingSectionData = {
   ],
 };
 
-export const downloadAppSectionData = {
+export const downloadAppSectionData: SectionDownloadAppProps = {
   title: "All you need in 1 App",
   descr:
     "Our appointment scheduler allows you to easily manage your appointments, send automated reminders, and customize your availability. Plus, with our intuitive interface and powerful features",
-  phoneImage: {
-    image: images.iPhone_image_2x,
+  heroImage: {
+    imageURL: images.iPhone_image_2x,
     alt: "iphone 12 pro",
   },
-  downloadApp: {
-    googleLink: {
-      img: images.Google_Play,
-      alt: "get on Play Market",
-      link: "#",
-    },
-    appleLink: {
-      img: images.App_Store,
-      alt: "get on App Store",
-      link: "#",
-    },
-  },
+  downloadAppLinks: [
+    { imageURL: images.Google_Play, alt: "get on Play Market", link: "#" },
+    { imageURL: images.App_Store, alt: "get on App Store", link: "#" },
+  ],
 };
 
-export const faqSectionData = {
+export const faqSectionData: SectionFAQProps = {
+  title: "FAQ",
   faqList: [
     {
-      id: "1",
+      id: 1,
       title: "What is booking page?",
       descr:
         "We are planning on adding an integration with Google Meet first, which will be followed by Zoom.",
     },
     {
-      id: "2",
+      id: 2,
       title: "Does you have integration with Meet and Zoom?",
       descr:
         "We are planning on adding an integration with Google Meet first, which will be followed by Zoom.",
     },
     {
-      id: "3",
+      id: 4,
       title: "Does you have integration with Google Calendar and iCal?",
       descr:
         "We are planning on adding an integration with Google Meet first, which will be followed by Zoom.",
     },
     {
-      id: "4",
+      id: 5,
       title: "How works waitlist feature?",
       descr:
         "We are planning on adding an integration with Google Meet first, which will be followed by Zoom.",

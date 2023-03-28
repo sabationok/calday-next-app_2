@@ -1,18 +1,16 @@
-import { ThemeType } from "@/styles/theme";
 import styled, { DefaultTheme } from "styled-components";
-import Icon, { IconId } from "../Icon";
+import Icon, { IconId } from "../atoms/Icon";
 
-type FAQItemProps = {
+export type FAQItemProps = {
   title?: string;
   descr?: string;
   onClick: React.MouseEventHandler;
   isOpen?: boolean;
   idx?: number;
-  theme?: DefaultTheme;
+  id?: string | number;
 };
 type StyledProps = {
   isOpen?: boolean;
-  theme?: ThemeType;
 };
 
 const FAQListItem: React.FC<FAQItemProps> = ({
@@ -63,7 +61,7 @@ const OpenItemButton = styled.button<StyledProps>`
   font-size: 20px;
   line-height: 1.3;
   text-align: left;
-  color: ${({ theme }: StyledProps) => theme?.blackPrimary};
+  color: ${({ theme }) => theme?.blackPrimary};
 
   width: 100%;
   padding: 21px 16px;
@@ -80,7 +78,7 @@ const ItemDescription = styled.div<StyledProps>`
   font-size: 18px;
   line-height: 1.89;
 
-  color: ${({ theme }: StyledProps) => theme?.blackPrimary};
+  color: ${({ theme }) => theme?.blackPrimary};
 
   max-height: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   padding: ${({ isOpen }) => (isOpen ? "0 16px 0 64px" : "0")};
@@ -94,8 +92,8 @@ const ItemDescriptionInner = styled.span`
   padding-bottom: 25px;
 `;
 const ItemIcon = styled(Icon)<StyledProps>`
-  color: ${({ isOpen, theme }: StyledProps) =>
-    isOpen ? theme?.actionGreen : theme?.bageDark};
+  color: ${({ isOpen, theme }) =>
+    isOpen ? theme.actionGreen : theme.bageDark};
   transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "rotate(0deg)")};
 `;
 export default FAQListItem;

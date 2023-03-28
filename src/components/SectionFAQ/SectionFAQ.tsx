@@ -1,13 +1,14 @@
 import { useState } from "react";
-import FAQListItem from "./FAQListItem";
-import testData from "@/testData";
+import FAQListItem, { FAQItemProps } from "./FAQListItem";
 import styled from "styled-components";
-import SG from "@/styles";
-import { ThemeType } from "@/styles/theme";
+import { Container } from "../atoms";
 
-const { faqList } = testData.faqSectionData;
+export type SectionFAQProps = {
+  title: string;
+  faqList: Omit<FAQItemProps, "isOpen" | "onClick" | "idx">[];
+};
 
-const SectionFAQ: React.FC = () => {
+const SectionFAQ: React.FC<SectionFAQProps> = ({ faqList, title }) => {
   const [current, setCurrent] = useState<null | number>();
 
   const onItemClick = (idx?: number) => {
@@ -16,8 +17,8 @@ const SectionFAQ: React.FC = () => {
 
   return (
     <Section>
-      <SG.Container>
-        <Title>FAQ</Title>
+      <Container>
+        <Title>{title || "FAQ"}</Title>
 
         <FAQList>
           {faqList.map((item, idx) => {
@@ -31,7 +32,7 @@ const SectionFAQ: React.FC = () => {
             );
           })}
         </FAQList>
-      </SG.Container>
+      </Container>
     </Section>
   );
 };
@@ -39,8 +40,7 @@ const SectionFAQ: React.FC = () => {
 export const Section = styled.section`
   padding: 78px 0 130px;
   min-height: 150px;
-  background-color: ${({ theme }: { theme: ThemeType }) =>
-    theme.bageBackground};
+  background-color: ${({ theme }) => theme.bageBackground};
 `;
 
 export const Title = styled.h2`
@@ -48,7 +48,7 @@ export const Title = styled.h2`
   font-size: 40px;
   line-height: 1.3;
   text-align: center;
-  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
+  color: ${({ theme }) => theme.brownPrime};
 
   text-transform: uppercase;
 

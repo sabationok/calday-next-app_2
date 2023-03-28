@@ -1,6 +1,6 @@
 // import SvgIcon from '@/components/SvgIcon/SvgIcon';
 // import SvgIcons, { IconsMap } from '@/components/SvgIcon/SvgIcons';
-import Icon, { IconId } from "@/components/Icon";
+import Icon, { IconId } from "@/components/atoms/Icon";
 import { paramsMap } from "@/styles/theme";
 import Link from "next/link";
 import styled from "styled-components";

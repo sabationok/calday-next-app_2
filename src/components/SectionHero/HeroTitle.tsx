@@ -1,4 +1,3 @@
-import { ThemeType } from "@/styles/theme";
 import styled from "styled-components";
 
 type IHeroTitle = {
@@ -27,7 +26,7 @@ const Title = styled.h1`
 
   margin-bottom: 49px;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
+  color: ${({ theme }) => theme.brownPrime};
 
   @media screen and (min-width: 375px) {
     font-size: 34px;

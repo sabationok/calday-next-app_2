@@ -1,8 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
 import styled from "styled-components";
-import { ThemeType } from "@/styles/theme";
-import Icon, { IconId } from "@/components/Icon";
+
+import Icon, { IconId } from "@/components/atoms/Icon";
 
 type FeatureItemProps = {
   icon: string | StaticImageData;
@@ -77,7 +77,7 @@ const StyledFeatureItem = styled.li<{ isActive?: boolean }>`
   }
 `;
 const ItemIcon = styled(Icon)<{ isActive?: boolean }>`
-  color: ${({ theme }: { theme: ThemeType }) => theme.actionOrange};
+  color: ${({ theme }) => theme.actionOrange};
   transform: ${({ isActive }) => `rotate(${isActive ? 90 : 0}deg)`};
 
   @media screen and (min-width: 960px) {
@@ -98,8 +98,7 @@ const FutureButton = styled.button`
   background-color: transparent;
   border-style: none;
 
-  transition: all
-    ${({ theme }: { theme: ThemeType }) => theme.timing_function__main};
+  transition: all ${({ theme }) => theme.timing_function__main};
 `;
 const RightSide = styled.div`
   display: flex;
@@ -118,14 +117,14 @@ const FutureTitle = styled.p`
   line-height: 1.3;
   text-align: start;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
+  color: ${({ theme }) => theme.blackPrimary};
 `;
 const FutureDescr = styled.span`
   font-weight: 450;
   font-size: 15px;
   line-height: 1.73;
   text-align: left;
-  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
+  color: ${({ theme }) => theme.blackPrimary};
 `;
 const FutureItemImage = styled.div`
   width: 100%;

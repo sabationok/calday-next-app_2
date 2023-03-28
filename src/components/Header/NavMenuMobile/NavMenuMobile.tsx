@@ -1,6 +1,6 @@
-import Button from "@/components/Button";
-import Icon, { IconId } from "@/components/Icon";
-import { ThemeType } from "@/styles/theme";
+import Button from "@/components/atoms/Button";
+import Icon, { IconId } from "@/components/atoms/Icon";
+
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
 import { navLinks } from "@/testData/testData.data";
 import { useState } from "react";
@@ -65,7 +65,7 @@ export const StNavMenuMobile = styled.nav<{ isOpen: boolean }>`
   height: 100vh;
   padding-bottom: 69px;
 
-  background-color: ${({ theme }: { theme: ThemeType }) => theme.bageLight};
+  background-color: ${({ theme }) => theme.bageLight};
 `;
 export const StNavMenuMobileHeader = styled.header`
   display: flex;

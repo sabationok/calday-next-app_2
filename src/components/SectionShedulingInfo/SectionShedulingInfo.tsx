@@ -1,7 +1,7 @@
 import testData from "@/testData";
 import TransferItem, { TransferItemType } from "./TransferItem";
 import styled from "styled-components";
-import { ThemeType } from "@/styles/theme";
+
 import images from "@/img";
 import SG from "@/styles";
 import Image from "next/image";
@@ -45,8 +45,7 @@ const StyledSection = styled.section`
   position: relative;
   padding: 156px 0 115px;
 
-  /* background: ${({ theme }: { theme: ThemeType }) =>
-    theme.backgroundGradient}; */
+  /* background: ${({ theme }) => theme.backgroundGradient}; */
 `;
 
 const SectionTopBackground = styled.div`
@@ -61,7 +60,7 @@ const Title = styled.h2`
   font-size: 40px;
   line-height: 1.3;
   text-align: center;
-  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
+  color: ${({ theme }) => theme.brownPrime};
 
   padding: 0 15px;
   margin-bottom: 6px;
@@ -71,7 +70,7 @@ const SubTitle = styled.p`
   font-size: 18px;
   line-height: 1.89;
   text-align: center;
-  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
+  color: ${({ theme }) => theme.blackPrimary};
 
   padding: 0 15px;
   margin-bottom: 78px;

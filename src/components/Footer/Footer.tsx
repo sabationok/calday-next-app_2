@@ -3,7 +3,6 @@ import FooterMenuList from "./FooterMenuList";
 import SG from "@/styles";
 import styled from "styled-components";
 import testData from "@/testData";
-import { ThemeType } from "@/styles/theme";
 
 type FooterProps = {
   className: string;
@@ -25,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 export const FooterContainer = styled.footer`
   width: 100%;
 
-  background: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
+  background: ${({ theme }) => theme.blackPrimary};
 `;
 export const FooterWrapper = styled.div`
   display: flex;
@@ -45,7 +44,7 @@ export const Copyright = styled.p`
 
   cursor: default;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.bagePrimary};
+  color: ${({ theme }) => theme.bagePrimary};
   text-align: center;
 `;
 

@@ -8,29 +8,30 @@ import SectionFAQ from "./SectionFAQ/SectionFAQ";
 import SectionBuyNow from "./SectionBuyNow/SectionBuyNow";
 
 import testData from "@/testData";
-import SG from "@/styles";
+import { BackgroundGradient } from "./atoms";
 
 const HomePage: React.FC = () => {
-  const { shedulingSectionData } = testData;
+  const { shedulingSectionData, faqSectionData, downloadAppSectionData } =
+    testData;
   return (
     <Layout>
-      <SG.BackgroundGradient>
+      <BackgroundGradient>
         <SectionHero />
-      </SG.BackgroundGradient>
+      </BackgroundGradient>
 
       <SectionFeatures />
 
-      <SG.BackgroundGradient>
+      <BackgroundGradient>
         <SectionShedulingInfo {...shedulingSectionData} />
 
-        <SectionDownloadApp />
-      </SG.BackgroundGradient>
+        <SectionDownloadApp {...downloadAppSectionData} />
+      </BackgroundGradient>
 
-      <SectionFAQ />
+      <SectionFAQ {...faqSectionData} />
 
-      <SG.BackgroundGradient>
+      <BackgroundGradient>
         <SectionBuyNow />
-      </SG.BackgroundGradient>
+      </BackgroundGradient>
     </Layout>
   );
 };

@@ -1,4 +1,3 @@
-import { ThemeType } from "@/styles/theme";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -18,13 +17,13 @@ const StyledLink = styled(Link)`
   font-weight: 700;
   font-size: 24px;
   line-height: 0.75;
-  color: ${({ theme }: { theme: ThemeType }) => theme.blackPrimary};
+  color: ${({ theme }) => theme.blackPrimary};
   transition: all var(--timing-function__main);
   &:hover {
-    color: ${({ theme }: { theme: ThemeType }) => theme.actionOrange};
+    color: ${({ theme }) => theme.actionOrange};
   }
   &:active {
-    color: ${({ theme }: { theme: ThemeType }) => theme.bageDark};
+    color: ${({ theme }) => theme.bageDark};
   }
 `;
 

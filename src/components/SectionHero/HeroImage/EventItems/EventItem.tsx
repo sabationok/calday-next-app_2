@@ -1,16 +1,18 @@
-import { IEventItem } from "@/types/types";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const EventItem: React.FC<IEventItem> = ({
-  avatar,
-  name,
-  event,
-  date,
-  alt,
-  style,
-}) => {
+export interface IEventItem {
+  avatar: string | StaticImageData;
+  name: string;
+  event: string;
+  date: string;
+  alt: string;
+}
+
+const EventItem: React.FC<
+  IEventItem & React.HTMLAttributes<HTMLDivElement>
+> = ({ avatar, name, event, date, alt, ...props }) => {
   return (
-    <StEventItem style={style}>
+    <StEventItem {...props}>
       <AvatarBox>
         <Image src={avatar} alt={alt} width={36} />
       </AvatarBox>
@@ -61,20 +63,17 @@ const ItemNameWrapper = styled.div`
   gap: 4px;
 `;
 const ItemName = styled.span`
-  font-family: "Gilroy", sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.71;
   color: #86888b;
 `;
 const ItemEvent = styled.span`
-  font-family: "Gilroy", sans-serif;
   font-size: 14px;
   line-height: 1.71;
   color: #86888b;
 `;
 const ItemDate = styled.span`
-  font-family: "Gilroy", sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.71;

@@ -1,4 +1,3 @@
-import { ThemeType } from "@/styles/theme";
 import styled from "styled-components";
 import Features from "./Features/Features";
 import Integrations from "./Integrations/Integrations";
@@ -24,8 +23,7 @@ const SectionFeatures: React.FC<SectionFeaturesProps> = ({
 };
 
 const StyledSectionFeatures = styled.section`
-  background-color: ${({ theme }: { theme: ThemeType }) =>
-    theme.bageBackground};
+  background-color: ${({ theme }) => theme.bageBackground};
 `;
 
 export const SectionContainer = styled.div`
@@ -48,7 +46,7 @@ export const FeaturesTitle = styled.h2`
   font-size: 40px;
   line-height: 1.3;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
+  color: ${({ theme }) => theme.brownPrime};
 
   padding: 0 18px;
 

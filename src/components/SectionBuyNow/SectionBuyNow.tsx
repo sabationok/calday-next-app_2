@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import testData from "@/testData";
 import ByNowZone from "./ByNowZone/ByNowZone";
-import { ThemeType } from "@/styles/theme";
 
 type StyledProps = {
   theme: ThemeType;

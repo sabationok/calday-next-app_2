@@ -1,42 +1,55 @@
-import { ThemeType } from "@/styles/theme";
-import testData from "@/testData";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import { TitleH2, SubTitle } from "../atoms";
 
-const SectionDownloadApp: React.FC = () => {
-  const { downloadAppSectionData } = testData;
+export type SectionDownloadAppProps = {
+  title: string;
+  descr: string;
+  heroImage: {
+    imageURL: string | StaticImageData;
+    alt: string;
+  };
+  downloadAppLinks: {
+    imageURL: string | StaticImageData;
+    alt: string;
+    link: string;
+  }[];
+};
+
+const SectionDownloadApp: React.FC<SectionDownloadAppProps> = ({
+  heroImage,
+  title,
+  descr,
+  downloadAppLinks,
+}) => {
   return (
     <Section>
       <ImageSide>
-        <Image
-          src={downloadAppSectionData.phoneImage.image}
-          alt={downloadAppSectionData.phoneImage.alt}
-        />
+        <Image src={heroImage.imageURL} alt={heroImage.alt} />
       </ImageSide>
 
       <TextSide>
-        <Title>{downloadAppSectionData.title}</Title>
+        <TitleH2
+          fontWeight={800}
+          fontSize={52}
+          margin="148px 0 32px"
+          textAlign="start"
+        >
+          {title}
+        </TitleH2>
 
-        <SubTitle>{downloadAppSectionData.descr}</SubTitle>
+        <SubTitle margin="0 0 40px" textAlign="start" lineHeight={1.89}>
+          {descr}
+        </SubTitle>
 
-        <DownloadButtons>
-          <GetAppLink href={downloadAppSectionData.downloadApp.googleLink.link}>
-            <Image
-              src={downloadAppSectionData.downloadApp.googleLink.img}
-              alt={downloadAppSectionData.downloadApp.googleLink.alt}
-              width={150}
-            />
-          </GetAppLink>
-
-          <GetAppLink href={downloadAppSectionData.downloadApp.appleLink.link}>
-            <Image
-              src={downloadAppSectionData.downloadApp.appleLink.img}
-              alt={downloadAppSectionData.downloadApp.appleLink.alt}
-              width={150}
-            />
-          </GetAppLink>
-        </DownloadButtons>
+        <DownloadLinks>
+          {downloadAppLinks.map(({ link, imageURL, alt }) => (
+            <GetAppLink key={alt} href={link}>
+              <Image src={imageURL} alt={alt} width={150} />
+            </GetAppLink>
+          ))}
+        </DownloadLinks>
       </TextSide>
     </Section>
   );
@@ -46,9 +59,6 @@ const Section = styled.section`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
-  /* background: ${({ theme }: { theme: ThemeType }) =>
-    theme.backgroundGradient}; */
 
   @media screen and (max-width: 768px) {
     flex-wrap: wrap-reverse;
@@ -63,33 +73,17 @@ const ImageSide = styled.div`
 const TextSide = styled.div`
   padding: 0 15px 150px 15px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   @media screen and (min-width: 960px) {
+    align-items: flex-start;
     min-width: 600px;
   }
 `;
 
-const Title = styled.h3`
-  font-weight: 800;
-  font-size: 52px;
-  line-height: 1;
-  color: var(--brownPrimeClr);
-
-  margin-top: calc(263px - 115px);
-  margin-bottom: 32px;
-`;
-
-const SubTitle = styled.p`
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.89;
-  color: var(--textBlackClr);
-
-  max-width: 573px;
-
-  margin-bottom: 40px;
-`;
-
-const DownloadButtons = styled.div`
+const DownloadLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;

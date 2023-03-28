@@ -1,4 +1,3 @@
-import { ThemeType } from "@/styles/theme";
 import styled from "styled-components";
 
 type IHeroSubTitle = {
@@ -18,7 +17,7 @@ const Title = styled.p`
 
   margin-bottom: 56px;
 
-  color: ${({ theme }: { theme: ThemeType }) => theme.brownPrime};
+  color: ${({ theme }) => theme.brownPrime};
 
   max-width: 847px;
   width: 100%;

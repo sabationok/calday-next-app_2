@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { ThemeType } from "./theme";
-
 export const Container = styled.div`
   width: 100%;
   max-width: 1440px;
@@ -12,8 +10,9 @@ export const Container = styled.div`
     padding: 0 20px;
   }
 `;
+
 export const BackgroundGradient = styled.div`
   width: 100%;
 
-  background: ${({ theme }: { theme: ThemeType }) => theme.backgroundGradient};
+  background: ${({ theme }) => theme.backgroundGradient};
 `;

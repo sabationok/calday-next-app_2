@@ -1,3 +1,3 @@
-import * as SG from './Globals.style';
+import * as SG from "../components/atoms/Globals";
 
 export default SG;

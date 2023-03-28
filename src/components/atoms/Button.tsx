@@ -2,28 +2,28 @@ import styled from "styled-components";
 import { paramsMap } from "@/styles/theme";
 import Icon from "./Icon";
 
-export interface ButtonProps {
-  variant:
-    | "filled"
-    | "outlinedLarge"
-    | "outlinedSmall"
-    | "outlinedLargeGradient";
-  type?: "button" | "submit" | "reset";
+export type BtnVariantNames =
+  | "filled"
+  | "outlinedLarge"
+  | "outlinedLargeGradient"
+  | "outlinedSmall";
+export interface IButtonProps {
+  variant: BtnVariantNames;
   children?: React.ReactNode;
   style?: object;
   iconId?: string;
 }
 
+export type ButtonProps = IButtonProps &
+  React.HTMLAttributes<HTMLButtonElement>;
 const Button: React.FC<ButtonProps> = ({
   children,
   variant = "filled",
-  type = "button",
-  style,
   iconId,
   ...props
 }) => {
   return (
-    <StyledButton {...{ variant, type, style, ...props }}>
+    <StyledButton {...{ variant, ...props }}>
       {children}
       {iconId && <BtnIcon id={iconId} size="20px" />}
     </StyledButton>

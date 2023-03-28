@@ -1,31 +1,3 @@
-export type ThemeType = {
-  backgroundGradient: string;
-  linearGradient_border: string;
-  inearGradient_text: string;
-  brownClr: string;
-  brownPrime: string;
-  blackPrimary: string;
-  textBlack: string;
-  actionOrange: string;
-  actionGreen: string;
-  graySecondary: string;
-  iconsDecor: string;
-  errorClr: string;
-  inputEmptyBackground: string;
-  bageBackground: string;
-  bageBackgroundSecondary: string;
-  bageDark: string;
-  bagePrimary: string;
-  bntOutlineActive: string;
-  timing_function__main: string;
-  timing_function__long: string;
-  transparent: "transparent";
-  yelowLight: string;
-  white: string;
-  bageLight: string;
-  borderColorHover: string;
-  subTitleFontWeight: number;
-};
 export const theme = {
   backgroundGradient: "linear-gradient(90deg, #ece9aa 1.16%, #f1cc97 80.04%);",
   linearGradient_border:
@@ -55,7 +27,15 @@ export const theme = {
   white: "#fff",
   borderColorHover: "#2B2F36",
   subTitleFontWeight: 400,
-} as ThemeType;
+};
+
+export interface ButtonVariant
+  extends Record<string, string | number | undefined> {
+  filled?: string;
+  outlinedLarge?: string;
+  outlinedLargeGradient?: string;
+  outlinedSmall?: string;
+}
 
 export const paramsMap = {
   backgroundColor: {
@@ -185,3 +165,7 @@ export const paramsMap = {
     outlinedSmall: "",
   },
 };
+export type ThemeType = typeof theme;
+declare module "styled-components" {
+  export interface DefaultTheme extends ThemeType {}
+}

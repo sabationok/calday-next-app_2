@@ -7,7 +7,7 @@ import testData from "@/testData";
 
 import SG from "@/styles";
 import styled from "styled-components";
-import { ThemeType } from "@/styles/theme";
+
 import Image from "next/image";
 import images from "@/img";
 
@@ -53,8 +53,7 @@ const StyledSectionHero = styled.section`
   width: 100%;
   padding: 84px 0 0;
 
-  /* background: ${({ theme }: { theme: ThemeType }) =>
-    theme.backgroundGradient}; */
+  /* background: ${({ theme }) => theme.backgroundGradient}; */
 `;
 
 const FlexWrapper = styled.div`
