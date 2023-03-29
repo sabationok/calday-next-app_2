@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { TitleH2, SubTitle } from "../atoms";
+import { TitleH2, SubTitle, Container } from "../atoms";
 import PhoneImage, { DownloadSectionImgProps } from "./PhoneImage";
 
 export type SectionDownloadAppProps = {
@@ -17,58 +17,71 @@ export type SectionDownloadAppProps = {
 const SectionDownloadApp: React.FC<
   SectionDownloadAppProps & DownloadSectionImgProps
 > = ({ title, descr, downloadAppLinks, ...props }) => {
-  console.log({ ...props });
   return (
-    <Section>
-      <ImageSide>
-        {/* <Image src={heroImage.imageURL} alt={heroImage.alt} /> */}
-        <PhoneImage {...props} />
-      </ImageSide>
+    <Container>
+      <Section>
+        <ImageSide>
+          <PhoneImage {...props} />
+        </ImageSide>
 
-      <TextSide>
-        <StTitleH2
-          fontWeight={800}
-          fontSize={52}
-          margin="148px 0 32px"
-          textAlign="start"
-        >
-          {title}
-        </StTitleH2>
+        <TextSide>
+          <StTitleH2
+            fontWeight={800}
+            fontSize={52}
+            margin="0 0 32px"
+            textAlign="start"
+          >
+            {title}
+          </StTitleH2>
 
-        <StSubTitle margin="0 0 40px" textAlign="start" lineHeight={1.89}>
-          {descr}
-        </StSubTitle>
+          <StSubTitle margin="0 0 40px" textAlign="start" lineHeight={1.89}>
+            {descr}
+          </StSubTitle>
 
-        <DownloadLinks>
-          {downloadAppLinks.map(({ link, imageURL, alt }) => (
-            <GetAppLink key={alt} href={link}>
-              <Image src={imageURL} alt={alt} />
-            </GetAppLink>
-          ))}
-        </DownloadLinks>
-      </TextSide>
-    </Section>
+          <DownloadLinks>
+            {downloadAppLinks.map(({ link, imageURL, alt }) => (
+              <GetAppLink key={alt} href={link}>
+                <Image src={imageURL} alt={alt} />
+              </GetAppLink>
+            ))}
+          </DownloadLinks>
+        </TextSide>
+      </Section>
+    </Container>
   );
 };
 
 const Section = styled.section`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
 
-  @media screen and (max-width: 960px) {
-    flex-wrap: wrap;
+  overflow: hidden;
+
+  @media screen and (min-width: 960px) {
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
 const ImageSide = styled.div`
   align-self: flex-end;
-  max-width: 693px;
+
+  padding-top: 40px;
+  padding: 40px 50px 0 50px;
+
+  /* min-width: 700px; */
+
+  max-width: 750px;
   width: 100%;
+  max-height: 630px;
+  /* overflow: hidden; */
+  @media screen and (min-width: 960px) {
+    min-width: 650px;
+  }
 `;
 
 const TextSide = styled.div`
-  padding: 0 15px 150px 15px;
+  padding: 148px 15px 150px 15px;
 
   display: flex;
   flex-direction: column;
@@ -76,7 +89,7 @@ const TextSide = styled.div`
 
   @media screen and (min-width: 960px) {
     align-items: flex-start;
-    min-width: 600px;
+    /* min-width: 600px; */
   }
 `;
 

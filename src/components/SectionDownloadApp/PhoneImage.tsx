@@ -44,6 +44,8 @@ const PhoneImageContainer = styled.div`
 
   width: 100%;
 
+  transform: rotate(-8deg) scale(0.9);
+
   /* height: 480px; */
 
   /* padding-top: 76px; */
