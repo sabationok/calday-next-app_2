@@ -43,6 +43,7 @@ const PhoneImageContainer = styled.div`
   position: relative;
 
   width: 100%;
+
   /* height: 480px; */
 
   /* padding-top: 76px; */
@@ -72,20 +73,19 @@ const PhoneImageBox = styled.div`
 
 const EventItemsContainer = styled.div`
   position: absolute;
-  top: calc(76px + 156px);
+  top: 175px;
   left: 50%;
 
   width: 80vw;
   height: 100%;
-  max-height: 159px;
-  max-width: 722px;
+  max-height: 370px;
+  max-width: 660px;
   min-width: 250px;
 
   transform: translateX(-50%);
 
   @media screen and (min-width: 960px) {
-    top: 263px;
-    max-height: 116px;
+    max-height: 370px;
   }
 `;
 export default PhoneImage;

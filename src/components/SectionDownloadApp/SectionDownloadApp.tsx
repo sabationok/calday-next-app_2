@@ -64,6 +64,7 @@ const Section = styled.section`
 const ImageSide = styled.div`
   align-self: flex-end;
   max-width: 693px;
+  width: 100%;
 `;
 
 const TextSide = styled.div`
