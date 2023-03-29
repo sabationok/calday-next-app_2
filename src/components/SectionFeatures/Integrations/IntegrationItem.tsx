@@ -16,7 +16,7 @@ const IntegrationItem: React.FC<IntegrationItemProps> = ({
   return (
     <StyledIntegrationItem>
       <IntegrationItemImgBox>
-        <Image src={icon} alt={alt} width={76} />
+        <Image src={icon} alt={alt} />
       </IntegrationItemImgBox>
 
       <IntegrationItemDescr>{descr}</IntegrationItemDescr>

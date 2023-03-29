@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Logo: React.FC = () => {
   return (
     <LogoBox>
-      <Image src={images.CaldayLogo} alt={"logo"} width={96} />
+      <Image src={images.CaldayLogo} alt={"logo"} />
     </LogoBox>
   );
 };

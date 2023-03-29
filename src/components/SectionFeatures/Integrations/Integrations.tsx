@@ -13,21 +13,19 @@ const Integrations: React.FC<IntegrationsProps> = ({
   list,
 }) => {
   return (
-    <>
-      <IntegrationsContainer>
-        <StyledIntegrations>
-          <IntegrationsTitle>{title}</IntegrationsTitle>
+    <IntegrationsContainer>
+      <StyledIntegrations>
+        <IntegrationsTitle>{title}</IntegrationsTitle>
 
-          <IntegrationsSubTitle>{subTitle}</IntegrationsSubTitle>
+        <IntegrationsSubTitle>{subTitle}</IntegrationsSubTitle>
 
-          <IntegrationsList>
-            {list.map((item) => (
-              <IntegrationItem key={item?._id} {...item} />
-            ))}
-          </IntegrationsList>
-        </StyledIntegrations>
-      </IntegrationsContainer>
-    </>
+        <IntegrationsList>
+          {list.map((item) => (
+            <IntegrationItem key={item?._id} {...item} />
+          ))}
+        </IntegrationsList>
+      </StyledIntegrations>
+    </IntegrationsContainer>
   );
 };
 

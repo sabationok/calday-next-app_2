@@ -1,8 +1,13 @@
 import { navLinks } from "@/testData/testData.data";
 import styled from "styled-components";
 import NavLinkDesktop from "./NavLinkDesktop";
+import { NavLinkProps } from "../Header";
 
-const NavMenuDesktop: React.FC = () => {
+export type NavMenuDesktop = {
+  navLinks: NavLinkProps[];
+};
+
+const NavMenuDesktop: React.FC<NavMenuDesktop> = () => {
   return (
     <StNavMenu>
       <StNavMenuList>

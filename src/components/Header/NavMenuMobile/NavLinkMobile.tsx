@@ -1,10 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { NavLinkProps } from "../Header";
 
-export type NavLinkProps = {
-  path: string;
-  name: string;
-};
 const NavLinkMobile: React.FC<NavLinkProps> = ({ path, name }) => {
   return (
     <li>

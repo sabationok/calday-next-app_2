@@ -1,14 +1,17 @@
 import Button from "@/components/atoms/Button";
 import Icon, { IconId } from "@/components/atoms/Icon";
 
-// import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
-import { navLinks } from "@/testData/testData.data";
 import { useState } from "react";
 import styled from "styled-components";
+import { NavLinkProps } from "../Header";
 import Logo from "../Logo";
 import NavLinkMobile from "./NavLinkMobile";
 
-const NavMenuMobile: React.FC = () => {
+export type NavMenuMobileProps = {
+  navLinks: NavLinkProps[];
+};
+
+const NavMenuMobile: React.FC<NavMenuMobileProps> = ({ navLinks }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuOpen = () => {
@@ -45,12 +48,12 @@ const NavMenuMobile: React.FC = () => {
   );
 };
 
-export const StNavMenuMobileContainer = styled.div`
+const StNavMenuMobileContainer = styled.div`
   @media screen and (min-width: 767px) {
     display: none;
   }
 `;
-export const StNavMenuMobile = styled.nav<{ isOpen: boolean }>`
+const StNavMenuMobile = styled.nav<{ isOpen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -67,7 +70,7 @@ export const StNavMenuMobile = styled.nav<{ isOpen: boolean }>`
 
   background-color: ${({ theme }) => theme.bageLight};
 `;
-export const StNavMenuMobileHeader = styled.header`
+const StNavMenuMobileHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,7 +80,7 @@ export const StNavMenuMobileHeader = styled.header`
   height: 60px;
   width: 100%;
 `;
-export const StNavMenuMobileButton = styled.button`
+const StNavMenuMobileButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +90,7 @@ export const StNavMenuMobileButton = styled.button`
   border: 1px solid transparent;
   background-color: transparent;
 `;
-export const StMenuList = styled.ul`
+const StMenuList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -14,7 +14,7 @@ const EventItem: React.FC<
   return (
     <StEventItem {...props}>
       <AvatarBox>
-        <Image src={avatar} alt={alt} width={36} />
+        <Image src={avatar} alt={alt} />
       </AvatarBox>
 
       <ItemRapper>

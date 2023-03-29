@@ -32,11 +32,11 @@ const SectionHero: React.FC<SectionHeroType> = ({
     <StyledSectionHero>
       <BackgroundHeroItems>
         <BackgroundAvatarItem top="15px" left="15px">
-          <Image src={images.HeroAvatarLeft_2x} alt="" width={200} />
+          <Image src={images.HeroAvatarLeft_2x} alt="" />
         </BackgroundAvatarItem>
 
         <BackgroundAvatarItem top="115px" right="15px">
-          <Image src={images.HeroAvatarRight_2x} alt="" width={279} />
+          <Image src={images.HeroAvatarRight_2x} alt="" />
         </BackgroundAvatarItem>
       </BackgroundHeroItems>
 

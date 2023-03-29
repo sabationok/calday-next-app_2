@@ -1,10 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-
-export type NavLinkProps = {
-  path: string;
-  name: string;
-};
+import { NavLinkProps } from "../Header";
 
 const NavLinkDesktop: React.FC<NavLinkProps> = ({ path, name }) => {
   return (

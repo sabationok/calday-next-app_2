@@ -12,7 +12,7 @@ const ProfitItem: React.FC<ProfitItemProps> = ({ icon, alt, title, descr }) => {
   return (
     <StyledProfitItem>
       <ProfitItemImg>
-        <Image src={icon} alt={alt} width={48} />
+        <Image src={icon} alt={alt} />
       </ProfitItemImg>
 
       <ProfitItemTitle>{title}</ProfitItemTitle>

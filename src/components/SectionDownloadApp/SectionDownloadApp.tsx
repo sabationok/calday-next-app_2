@@ -46,7 +46,7 @@ const SectionDownloadApp: React.FC<SectionDownloadAppProps> = ({
         <DownloadLinks>
           {downloadAppLinks.map(({ link, imageURL, alt }) => (
             <GetAppLink key={alt} href={link}>
-              <Image src={imageURL} alt={alt} width={150} />
+              <Image src={imageURL} alt={alt} />
             </GetAppLink>
           ))}
         </DownloadLinks>

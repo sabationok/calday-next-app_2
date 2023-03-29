@@ -1,22 +1,41 @@
-import FooterMenuList from "./FooterMenuList";
+import FooterMenuList, {
+  FooterListProps,
+  FooterSectionProps,
+} from "./FooterMenuList";
 
-import SG from "@/styles";
 import styled from "styled-components";
-import testData from "@/testData";
+import { Container } from "../atoms";
 
-type FooterProps = {
-  className: string;
+export type FooterProps = {
+  footerMenuSections: FooterSectionProps[];
+  company: { title: string; name: string };
+  contacts: {
+    title: string;
+    email?: string;
+    phone?: string;
+  };
+  copyright: string;
 };
-const Footer: React.FC<FooterProps> = ({ className }) => {
+const Footer: React.FC<FooterProps & React.HTMLAttributes<HTMLDivElement>> = ({
+  contacts,
+  footerMenuSections,
+  company,
+  copyright,
+  ...props
+}) => {
   return (
-    <FooterContainer className={className}>
-      <SG.Container>
+    <FooterContainer {...props}>
+      <Container>
         <FooterWrapper>
-          <FooterMenuList />
+          <FooterMenuList
+            footerMenuSections={footerMenuSections}
+            contacts={contacts}
+            company={company}
+          />
 
-          <Copyright>{testData.footerData.copyright}</Copyright>
+          <Copyright>{copyright}</Copyright>
         </FooterWrapper>
-      </SG.Container>
+      </Container>
     </FooterContainer>
   );
 };

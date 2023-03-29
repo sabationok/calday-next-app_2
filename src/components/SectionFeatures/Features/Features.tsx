@@ -16,28 +16,26 @@ const Features: React.FC<FeaturesListProps> = ({ list }) => {
   };
 
   return (
-    <>
-      <StyledFeatures>
-        <FeaturesList>
-          {list.map((item, idx) => (
-            <FeatureItem
-              key={item.id}
-              {...{
-                ...item,
-                onClick: () => {
-                  onFutureItemClick(idx);
-                },
-                isActive: current === idx,
-              }}
-            />
-          ))}
-        </FeaturesList>
+    <StyledFeatures>
+      <FeaturesList>
+        {list.map((item, idx) => (
+          <FeatureItem
+            key={item.id}
+            {...{
+              ...item,
+              onClick: () => {
+                onFutureItemClick(idx);
+              },
+              isActive: current === idx,
+            }}
+          />
+        ))}
+      </FeaturesList>
 
-        <FeaturesIlustrationImage>
-          <Image src={list[current].imgURL} alt={list[current].imgAlt} />
-        </FeaturesIlustrationImage>
-      </StyledFeatures>
-    </>
+      <FeaturesIlustrationImage>
+        <Image src={list[current].imgURL} alt={list[current].imgAlt} />
+      </FeaturesIlustrationImage>
+    </StyledFeatures>
   );
 };
 

@@ -2,6 +2,9 @@ import Head from "next/head";
 import localFont from "next/font/local";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import { navLinks } from "@/testData/testData.data";
+
+import { footerData } from "@/testData/testData.data";
 
 const regularFont = localFont({
   preload: true,
@@ -35,7 +38,7 @@ type LayoutProps = {
   children?: React.ReactNode;
 };
 
-export default function Layout({ title, description, children }: LayoutProps) {
+const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
   return (
     <>
       <Head>
@@ -45,11 +48,12 @@ export default function Layout({ title, description, children }: LayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header className={regularFont.className} />
+      <Header className={regularFont.className} navLinks={navLinks} />
 
-      <main className={regularFont.className}>{children} </main>
+      <main className={regularFont.className}>{children}</main>
 
-      <Footer className={regularFont.className} />
+      <Footer className={regularFont.className} {...footerData} />
     </>
   );
-}
+};
+export default Layout;

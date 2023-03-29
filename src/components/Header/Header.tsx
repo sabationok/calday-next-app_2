@@ -1,32 +1,42 @@
 import Logo from "./Logo";
 import NavMenuDesktop from "./NavMenuDesktop/NavMenuDesktop";
-import HeaderRightSide from "./HeaderRightSide";
 
-import SG from "@/styles";
 import styled from "styled-components";
+import { Container } from "../atoms";
+import LinkIcon from "../atoms/LinkIcon";
+import NavMenuMobile from "./NavMenuMobile/NavMenuMobile";
 
-type HeaderProps = {
-  className: string;
+export type NavLinkProps = {
+  path: string;
+  name: string;
 };
-const Header: React.FC<HeaderProps> = ({ className }) => {
+export type HeaderProps = {
+  navLinks: NavLinkProps[];
+};
+const Header: React.FC<HeaderProps & React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  navLinks,
+}) => {
   return (
-    <>
-      <StHeader className={className}>
-        <SG.Container>
-          <StHeaderGrid>
-            <Logo />
+    <StHeader className={className}>
+      <Container>
+        <StHeaderGrid>
+          <Logo />
 
-            <NavMenuDesktop />
+          <NavMenuDesktop navLinks={navLinks} />
 
-            <HeaderRightSide />
-          </StHeaderGrid>
-        </SG.Container>
-      </StHeader>
-    </>
+          <SignUpBox>
+            <LinkIcon variant="outlinedSmall" />
+
+            <NavMenuMobile navLinks={navLinks} />
+          </SignUpBox>
+        </StHeaderGrid>
+      </Container>
+    </StHeader>
   );
 };
 
-export const StHeader = styled.header`
+const StHeader = styled.header`
   display: flex;
   align-items: center;
 
@@ -48,7 +58,7 @@ export const StHeader = styled.header`
   backdrop-filter: blur(25px);
 `;
 
-export const StHeaderGrid = styled.div`
+const StHeaderGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -59,5 +69,10 @@ export const StHeaderGrid = styled.div`
     grid-template-columns: 1fr 1.5fr 1fr;
   }
 `;
-
+const SignUpBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+`;
 export default Header;

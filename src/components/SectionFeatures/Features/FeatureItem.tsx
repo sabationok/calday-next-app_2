@@ -29,7 +29,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   return (
     <StyledFeatureItem isActive={isActive}>
       <FutureButton onClick={onClick}>
-        <Image src={icon} alt={iconAlt} width={48} />
+        <Image src={icon} alt={iconAlt} />
 
         <RightSide>
           <TitleWrapper>

@@ -1,54 +1,49 @@
-import testData from "@/testData";
 import Link from "next/link";
 import styled from "styled-components";
 
-const FooterMenuList: React.FC = () => {
-  const { company, useCases, support, blog, contacts } = testData.footerData;
+export type FooterLinkProps = {
+  name: string;
+  link: string;
+};
+export type FooterSectionProps = {
+  title: string;
+  links: FooterLinkProps[];
+};
+
+export type FooterListProps = {
+  footerMenuSections: FooterSectionProps[];
+  contacts: any;
+  company: any;
+};
+
+const FooterMenuList: React.FC<FooterListProps> = ({
+  footerMenuSections,
+  company,
+  contacts,
+}) => {
   return (
     <StyledFooterList>
       <FooterListItem>
         <Title>{company.title}</Title>
 
         <LinksList>
-          <ListItemTextBold>{company.company}</ListItemTextBold>
+          <ListItemTextBold>{company.name}</ListItemTextBold>
         </LinksList>
       </FooterListItem>
 
-      <FooterListItem>
-        <Title>{useCases.title}</Title>
+      {footerMenuSections.map(({ title, links }, idx) => (
+        <FooterListItem key={idx}>
+          <Title>{title}</Title>
 
-        <LinksList>
-          {useCases.links.map((link, idx) => (
-            <LinksListItem key={idx}>
-              <Link href="#">{link.name}</Link>
-            </LinksListItem>
-          ))}
-        </LinksList>
-      </FooterListItem>
-
-      <FooterListItem>
-        <Title>{support.title}</Title>
-
-        <LinksList>
-          {support.links.map((link, idx) => (
-            <LinksListItem key={idx}>
-              <Link href="#">{link.name}</Link>
-            </LinksListItem>
-          ))}
-        </LinksList>
-      </FooterListItem>
-
-      <FooterListItem>
-        <Title>{blog.title}</Title>
-
-        <LinksList>
-          {blog.links.map((link, idx) => (
-            <LinksListItem key={idx}>
-              <Link href="#">{link.name}</Link>
-            </LinksListItem>
-          ))}
-        </LinksList>
-      </FooterListItem>
+          <LinksList>
+            {links.map((link, idx) => (
+              <LinksListItem key={idx}>
+                <Link href="#">{link.name}</Link>
+              </LinksListItem>
+            ))}
+          </LinksList>
+        </FooterListItem>
+      ))}
 
       <FooterListItem>
         <Title>{contacts.title}</Title>
@@ -63,7 +58,7 @@ const FooterMenuList: React.FC = () => {
   );
 };
 
-export const StyledFooterList = styled.ul`
+const StyledFooterList = styled.ul`
   display: grid;
   /* justify-content: start; */
   gap: 48px;
@@ -78,32 +73,32 @@ export const StyledFooterList = styled.ul`
   }
 `;
 
-export const FooterListItem = styled.li`
+const FooterListItem = styled.li`
   display: flex;
   flex-direction: column;
   gap: 14px;
 `;
 
-export const Title = styled.p`
+const Title = styled.p`
   font-weight: 300;
   font-size: 18px;
   line-height: 1.89;
   color: ${({ theme }) => theme.bagePrimary};
 `;
 
-export const LinksList = styled.ul`
+const LinksList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
 
-export const LinksListItem = styled.li`
+const LinksListItem = styled.li`
   font-weight: 500;
   font-size: 15px;
   line-height: 0.93;
   color: #ffffff;
 `;
-export const ListItemTextBold = styled.li`
+const ListItemTextBold = styled.li`
   font-weight: 800;
   font-size: 18px;
   color: #ffffff;

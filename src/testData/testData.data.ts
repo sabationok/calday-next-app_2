@@ -1,3 +1,5 @@
+import { FooterProps } from "@/components/Footer/Footer";
+import { FooterListProps } from "@/components/Footer/FooterMenuList";
 import { SectionDownloadAppProps } from "@/components/SectionDownloadApp/SectionDownloadApp";
 import { SectionFAQProps } from "@/components/SectionFAQ/SectionFAQ";
 import { SectionFeaturesProps } from "@/components/SectionFeatures/SectionFeatures";
@@ -363,36 +365,39 @@ export const buyNowSectionData = {
   ],
 };
 
-export const footerData = {
+export const footerData: FooterProps = {
   company: {
     title: "Calday ltd.",
-    company: "Calday ltd.",
+    name: "Calday ltd.",
   },
-  useCases: {
-    title: "Use Cases",
-    links: [
-      { link: "#", name: "Education" },
-      { link: "#", name: "Business" },
-      { link: "#", name: "Industry 1" },
-      { link: "#", name: "Industry 2" },
-    ],
-  },
-  support: {
-    title: "Support",
-    links: [
-      { link: "#", name: "FAQ" },
-      { link: "#", name: "Terms & Conditions" },
-      { link: "#", name: "Privacy Policy" },
-    ],
-  },
-  blog: {
-    title: "Blog",
-    links: [
-      { link: "#", name: "Article 1" },
-      { link: "#", name: "Article 2" },
-      { link: "#", name: "Article 3" },
-    ],
-  },
+  footerMenuSections: [
+    {
+      title: "Use Cases",
+      links: [
+        { link: "#", name: "Education" },
+        { link: "#", name: "Business" },
+        { link: "#", name: "Industry 1" },
+        { link: "#", name: "Industry 2" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { link: "#", name: "FAQ" },
+        { link: "#", name: "Terms & Conditions" },
+        { link: "#", name: "Privacy Policy" },
+      ],
+    },
+    {
+      title: "Blog",
+      links: [
+        { link: "#", name: "Article 1" },
+        { link: "#", name: "Article 2" },
+        { link: "#", name: "Article 3" },
+      ],
+    },
+  ],
+
   contacts: { title: "Contacts", email: "support@calday.app", phone: "" },
   copyright: "© Calday 2023 | All Rights Reserved",
 };
