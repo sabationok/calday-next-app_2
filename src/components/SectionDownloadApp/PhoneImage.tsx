@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import styled from "styled-components";
 import EventItem, { IEventItem } from "../atoms/EventItem";
 
-export type ByNowSectionImg = {
+export type DownloadSectionImgProps = {
   imageUrl: string | StaticImageData;
   alt: string;
   eventItems: {
@@ -10,16 +10,16 @@ export type ByNowSectionImg = {
     right: IEventItem;
   };
 };
-const HeroImage: React.FC<ByNowSectionImg> = ({
+const PhoneImage: React.FC<DownloadSectionImgProps> = ({
   imageUrl,
   alt,
   eventItems,
 }) => {
   return (
-    <HeroImageContainer>
-      <HeroImageBox>
+    <PhoneImageContainer>
+      <PhoneImageBox>
         <Image src={imageUrl} alt={alt} />
-      </HeroImageBox>
+      </PhoneImageBox>
 
       <EventItemsContainer>
         <EventItem
@@ -31,11 +31,11 @@ const HeroImage: React.FC<ByNowSectionImg> = ({
           style={{ bottom: 0, right: 0, minWidth: "265" }}
         />
       </EventItemsContainer>
-    </HeroImageContainer>
+    </PhoneImageContainer>
   );
 };
 
-const HeroImageContainer = styled.div`
+const PhoneImageContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -43,16 +43,16 @@ const HeroImageContainer = styled.div`
   position: relative;
 
   width: 100%;
-  height: 480px;
+  /* height: 480px; */
 
-  padding-top: 76px;
-  overflow: hidden;
-  @media screen and (min-width: 960px) {
+  /* padding-top: 76px; */
+  /* overflow: hidden; */
+  /* @media screen and (min-width: 960px) {
     height: 429px;
-  }
+  } */
 `;
 
-const HeroImageBox = styled.div`
+const PhoneImageBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,4 +88,4 @@ const EventItemsContainer = styled.div`
     max-height: 116px;
   }
 `;
-export default HeroImage;
+export default PhoneImage;

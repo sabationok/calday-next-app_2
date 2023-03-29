@@ -19,7 +19,7 @@ import futureImg_1_2x from "./futureImg_1_2x.png";
 import futureImg_2_2x from "./futureImg_2_2x.png";
 import futureImg_3_2x from "./futureImg_3_2x.png";
 import futureImg_4_2x from "./futureImg_4_2x.png";
-import iPhone_image_2x from "./iPhone_image_2x.png";
+import iPhone_image_2x from "./iPhone_12_pro.png";
 import Google_Play from "./Google_Play.png";
 import App_Store from "./App_Store.png";
 import bckgrnd_element_hero from "./bckgrnd_element_hero.png";

@@ -1,5 +1,5 @@
 import { FooterProps } from "@/components/Footer/Footer";
-import { FooterListProps } from "@/components/Footer/FooterMenuList";
+import { DownloadSectionImgProps } from "@/components/SectionDownloadApp/PhoneImage";
 import { SectionDownloadAppProps } from "@/components/SectionDownloadApp/SectionDownloadApp";
 import { SectionFAQProps } from "@/components/SectionFAQ/SectionFAQ";
 import { SectionFeaturesProps } from "@/components/SectionFeatures/SectionFeatures";
@@ -223,18 +223,33 @@ export const shedulingSectionData: SectionShedulingType = {
   ],
 };
 
-export const downloadAppSectionData: SectionDownloadAppProps = {
+export const downloadAppSectionData: SectionDownloadAppProps &
+  DownloadSectionImgProps = {
   title: "All you need in 1 App",
   descr:
     "Our appointment scheduler allows you to easily manage your appointments, send automated reminders, and customize your availability. Plus, with our intuitive interface and powerful features",
-  heroImage: {
-    imageURL: images.iPhone_image_2x,
-    alt: "iphone 12 pro",
-  },
   downloadAppLinks: [
     { imageURL: images.Google_Play, alt: "get on Play Market", link: "#" },
     { imageURL: images.App_Store, alt: "get on App Store", link: "#" },
   ],
+  imageUrl: images.iPhone_image_2x,
+  alt: "iphone 12 pro",
+  eventItems: {
+    left: {
+      avatar: images.avatarLeft,
+      alt: "",
+      name: "Chloe",
+      event: "booked Meeting",
+      date: "Monday, 2:10 PM",
+    },
+    right: {
+      avatar: images.avatarRight,
+      alt: "",
+      name: "Joe",
+      event: "booked Ad Consultation",
+      date: "Tomorrow, 4:30 PM",
+    },
+  },
 };
 
 export const faqSectionData: SectionFAQProps = {

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import testData from "@/testData";
 import ByNowZone from "./ByNowZone/ByNowZone";
 
 export type SectionBuyNowProps = {

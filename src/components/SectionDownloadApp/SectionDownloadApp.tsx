@@ -2,14 +2,11 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { TitleH2, SubTitle } from "../atoms";
+import PhoneImage, { DownloadSectionImgProps } from "./PhoneImage";
 
 export type SectionDownloadAppProps = {
   title: string;
   descr: string;
-  heroImage: {
-    imageURL: string | StaticImageData;
-    alt: string;
-  };
   downloadAppLinks: {
     imageURL: string | StaticImageData;
     alt: string;
@@ -17,31 +14,30 @@ export type SectionDownloadAppProps = {
   }[];
 };
 
-const SectionDownloadApp: React.FC<SectionDownloadAppProps> = ({
-  heroImage,
-  title,
-  descr,
-  downloadAppLinks,
-}) => {
+const SectionDownloadApp: React.FC<
+  SectionDownloadAppProps & DownloadSectionImgProps
+> = ({ title, descr, downloadAppLinks, ...props }) => {
+  console.log({ ...props });
   return (
     <Section>
       <ImageSide>
-        <Image src={heroImage.imageURL} alt={heroImage.alt} />
+        {/* <Image src={heroImage.imageURL} alt={heroImage.alt} /> */}
+        <PhoneImage {...props} />
       </ImageSide>
 
       <TextSide>
-        <TitleH2
+        <StTitleH2
           fontWeight={800}
           fontSize={52}
           margin="148px 0 32px"
           textAlign="start"
         >
           {title}
-        </TitleH2>
+        </StTitleH2>
 
-        <SubTitle margin="0 0 40px" textAlign="start" lineHeight={1.89}>
+        <StSubTitle margin="0 0 40px" textAlign="start" lineHeight={1.89}>
           {descr}
-        </SubTitle>
+        </StSubTitle>
 
         <DownloadLinks>
           {downloadAppLinks.map(({ link, imageURL, alt }) => (
@@ -60,8 +56,8 @@ const Section = styled.section`
   align-items: flex-start;
   justify-content: center;
 
-  @media screen and (max-width: 768px) {
-    flex-wrap: wrap-reverse;
+  @media screen and (max-width: 960px) {
+    flex-wrap: wrap;
   }
 `;
 
@@ -85,10 +81,25 @@ const TextSide = styled.div`
 
 const DownloadLinks = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
 `;
 
+const StTitleH2 = styled(TitleH2)`
+  font-size: 36px;
+  text-align: center;
+  @media screen and (min-width: 960px) {
+    font-size: 52px;
+    text-align: start;
+  }
+`;
+const StSubTitle = styled(SubTitle)`
+  text-align: center;
+  @media screen and (min-width: 960px) {
+    text-align: start;
+  }
+`;
 const GetAppLink = styled(Link)`
   width: 150px;
   min-width: 150px;
