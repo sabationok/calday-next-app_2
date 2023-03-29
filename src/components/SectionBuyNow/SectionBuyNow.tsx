@@ -2,22 +2,29 @@ import styled from "styled-components";
 import testData from "@/testData";
 import ByNowZone from "./ByNowZone/ByNowZone";
 
-type StyledProps = {
-  theme: ThemeType;
+export type SectionBuyNowProps = {
+  title: string;
+  subTitle: string;
+  descr: string;
 };
-const SectionBuyNow: React.FC = () => {
+
+const SectionBuyNow: React.FC<SectionBuyNowProps> = ({
+  title,
+  subTitle,
+  descr,
+}) => {
   return (
     <Section>
       <SectionTopBackground />
 
       <SectionBuyNowContainer>
-        <Title>{testData.buyNowSectionData.title}</Title>
+        <Title>{title}</Title>
 
-        <SubTitle>{testData.buyNowSectionData.subTitle}</SubTitle>
+        <SubTitle>{subTitle}</SubTitle>
 
         <ByNowZone />
 
-        <Description>{testData.buyNowSectionData.descr}</Description>
+        <Description>{descr}</Description>
       </SectionBuyNowContainer>
     </Section>
   );
@@ -31,15 +38,13 @@ const Section = styled.section`
   padding: 34px 0 78px;
 
   min-height: 530px;
-
-  /* background: ${({ theme }: StyledProps) => theme.backgroundGradient}; */
 `;
 const SectionTopBackground = styled.div`
   position: absolute;
   top: 0;
   height: 0;
 
-  background-color: ${({ theme }: StyledProps) => theme.bageBackground};
+  background-color: ${({ theme }) => theme.bageBackground};
   width: 100%;
   min-height: 430px;
 `;
@@ -59,7 +64,7 @@ const Title = styled.h2`
   line-height: 1.3;
   text-align: center;
 
-  color: ${({ theme }: StyledProps) => theme.brownPrime};
+  color: ${({ theme }) => theme.brownPrime};
   padding-bottom: 3px;
 `;
 const SubTitle = styled.p`
@@ -78,7 +83,7 @@ const Description = styled.p`
   font-size: 18px;
   line-height: 1.83;
   text-align: center;
-  color: ${({ theme }: StyledProps) => theme.textBlack};
+  color: ${({ theme }) => theme.textBlack};
 
   margin: 0 auto;
 `;

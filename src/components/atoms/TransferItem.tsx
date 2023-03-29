@@ -1,8 +1,9 @@
 // import SvgIcons, { IconsMap } from "@/components/SvgIcon/SvgIcons";
 import styled from "styled-components";
-import Icon, { IconId } from "../atoms/Icon";
+import Icon, { IconId } from "./Icon";
 
 export type TransferItemType = {
+  _id?: string;
   from: string;
   to: string;
   fill: string;

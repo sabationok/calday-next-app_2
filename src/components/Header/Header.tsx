@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 import NavMenuDesktop from "./NavMenuDesktop/NavMenuDesktop";
-import HeaderRightSide from "./HeaderRightSide/HeaderRightSide";
+import HeaderRightSide from "./HeaderRightSide";
 
 import SG from "@/styles";
 import styled from "styled-components";

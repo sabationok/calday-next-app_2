@@ -1,14 +1,6 @@
 import styled from "styled-components";
 
-type IHeroTitle = {
-  children?: React.ReactNode;
-};
-
-const HeroTitle: React.FC<IHeroTitle> = ({ children }) => {
-  return <Title>{children}</Title>;
-};
-
-const Title = styled.h1`
+const HeroTitle = styled.h1`
   width: 100%;
 
   text-align: center;

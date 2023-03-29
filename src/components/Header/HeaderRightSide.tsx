@@ -1,11 +1,11 @@
-import SignUpLinkButton from "./SignUpLinkButton";
-import NavMenuMobile from "../NavMenuMobile/NavMenuMobile";
+import LinkIcon from "../atoms/LinkIcon";
+import NavMenuMobile from "./NavMenuMobile/NavMenuMobile";
 import styled from "styled-components";
 
 const HeaderRightSide: React.FC = () => {
   return (
     <SignUpBox>
-      <SignUpLinkButton variant="outlinedSmall" />
+      <LinkIcon variant="outlinedSmall" />
 
       <NavMenuMobile />
     </SignUpBox>

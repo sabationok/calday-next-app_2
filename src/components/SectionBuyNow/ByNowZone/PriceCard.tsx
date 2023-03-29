@@ -86,7 +86,7 @@ const Card = styled.li<IStyledProps>`
   padding: 30px;
 
   background: ${({ isPremium, theme }) =>
-    isPremium ? theme?.linearGradient_border : theme?.white};
+    isPremium ? theme.linearGradient_border : theme.white};
   border: 4px solid transparent;
   border-radius: 20px;
 

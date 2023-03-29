@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import styled from "styled-components";
 
 export type IntegrationItemProps = {
+  _id?: string;
   icon: string | StaticImageData;
   alt: string;
   descr?: string;

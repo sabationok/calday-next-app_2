@@ -1,23 +1,25 @@
 import { useState } from "react";
-import testData from "@/testData";
-import FeatureItem from "./FeatureItem";
+import FeatureItem, { FeatureItemProps } from "./FeatureItem";
 import Image from "next/image";
 
 import styled from "styled-components";
 
-const { featuresList } = testData.featuresSectionData;
+export type FeaturesListProps = {
+  list: FeatureItemProps[];
+};
 
-const Features: React.FC = () => {
+const Features: React.FC<FeaturesListProps> = ({ list }) => {
   const [current, setCurrent] = useState(0);
 
   const onFutureItemClick = (idx: number) => {
     setCurrent(idx);
   };
+
   return (
     <>
       <StyledFeatures>
         <FeaturesList>
-          {featuresList.map((item, idx) => (
+          {list.map((item, idx) => (
             <FeatureItem
               key={item.id}
               {...{
@@ -32,10 +34,7 @@ const Features: React.FC = () => {
         </FeaturesList>
 
         <FeaturesIlustrationImage>
-          <Image
-            src={featuresList[current].imgURL}
-            alt={featuresList[current].imgAlt}
-          />
+          <Image src={list[current].imgURL} alt={list[current].imgAlt} />
         </FeaturesIlustrationImage>
       </StyledFeatures>
     </>

@@ -11,15 +11,21 @@ import testData from "@/testData";
 import { BackgroundGradient } from "./atoms";
 
 const HomePage: React.FC = () => {
-  const { shedulingSectionData, faqSectionData, downloadAppSectionData } =
-    testData;
+  const {
+    shedulingSectionData,
+    faqSectionData,
+    downloadAppSectionData,
+    heroSectionData,
+    featuresSectionData,
+    buyNowSectionData,
+  } = testData;
   return (
     <Layout>
       <BackgroundGradient>
-        <SectionHero />
+        <SectionHero {...heroSectionData} />
       </BackgroundGradient>
 
-      <SectionFeatures />
+      <SectionFeatures {...featuresSectionData} />
 
       <BackgroundGradient>
         <SectionShedulingInfo {...shedulingSectionData} />
@@ -30,7 +36,7 @@ const HomePage: React.FC = () => {
       <SectionFAQ {...faqSectionData} />
 
       <BackgroundGradient>
-        <SectionBuyNow />
+        <SectionBuyNow {...buyNowSectionData} />
       </BackgroundGradient>
     </Layout>
   );

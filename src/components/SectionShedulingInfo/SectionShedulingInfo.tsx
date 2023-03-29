@@ -1,18 +1,18 @@
 import testData from "@/testData";
-import TransferItem, { TransferItemType } from "./TransferItem";
+import TransferItem, { TransferItemType } from "../atoms/TransferItem";
 import styled from "styled-components";
-
-import images from "@/img";
-import SG from "@/styles";
 import Image from "next/image";
 
-type SectionType = {
+import images from "@/img";
+import { Container } from "../atoms";
+
+export type SectionShedulingType = {
   title: string;
   subTitle: string;
   list: TransferItemType[];
 };
 
-const SectionShedulingInfo: React.FC<SectionType> = () => {
+const SectionShedulingInfo: React.FC<SectionShedulingType> = () => {
   const { title, subTitle, list } = testData.shedulingSectionData;
   return (
     <StyledSection>
@@ -20,7 +20,7 @@ const SectionShedulingInfo: React.FC<SectionType> = () => {
         <Image src={images.bckgrnd_element_bottom} alt="" />
       </SectionTopBackground>
 
-      <SG.Container>
+      <Container>
         <Title>{title}</Title>
 
         <SubTitle>{subTitle}</SubTitle>
@@ -28,7 +28,7 @@ const SectionShedulingInfo: React.FC<SectionType> = () => {
         <TransfersList>
           {list.map((item) => (
             <TransferItem
-              key={item.fill}
+              key={item?._id || item.fill}
               from={item.from}
               to={item.to}
               fill={item.fill}
@@ -36,7 +36,7 @@ const SectionShedulingInfo: React.FC<SectionType> = () => {
             />
           ))}
         </TransfersList>
-      </SG.Container>
+      </Container>
     </StyledSection>
   );
 };
@@ -44,8 +44,6 @@ const SectionShedulingInfo: React.FC<SectionType> = () => {
 const StyledSection = styled.section`
   position: relative;
   padding: 156px 0 115px;
-
-  /* background: ${({ theme }) => theme.backgroundGradient}; */
 `;
 
 const SectionTopBackground = styled.div`

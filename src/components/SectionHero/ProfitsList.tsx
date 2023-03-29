@@ -1,9 +1,9 @@
 import SG from "@/styles";
-import { ProfitItemProps } from "./ProfitItem";
-import ProfitItem from "./ProfitItem";
+import { ProfitItemProps } from "../atoms/ProfitItem";
+import ProfitItem from "../atoms/ProfitItem";
 import styled from "styled-components";
 
-type ProfitsProps = {
+export type ProfitsProps = {
   profitsList: ProfitItemProps[];
 };
 

@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 import Icon, { IconId } from "@/components/atoms/Icon";
 
-type FeatureItemProps = {
+export type FeatureItemProps = {
+  id?: string | number;
   icon: string | StaticImageData;
   iconAlt: string;
   title?: string;
@@ -59,13 +60,8 @@ const StyledFeatureItem = styled.li<{ isActive?: boolean }>`
 
   overflow: hidden;
 
-  background-color: ${({
-    isActive,
-    theme,
-  }: {
-    isActive?: boolean;
-    theme: ThemeType;
-  }) => (isActive ? theme.bagePrimary : "transparent")};
+  background-color: ${({ isActive, theme }) =>
+    isActive ? theme.bagePrimary : "transparent"};
 
   fill: ${({ isActive }) => (isActive ? "#62C45B" : "#D8B682")};
 

@@ -1,22 +1,26 @@
 import styled from "styled-components";
-import Features from "./Features/Features";
-import Integrations from "./Integrations/Integrations";
+import Features, { FeaturesListProps } from "./Features/Features";
+import Integrations, { IntegrationsProps } from "./Integrations/Integrations";
 
-type SectionFeaturesProps = {
+export type SectionFeaturesProps = {
   title?: string;
+  featuresList: FeaturesListProps;
+  integrations: IntegrationsProps;
 };
 
 const SectionFeatures: React.FC<SectionFeaturesProps> = ({
   title = "Features",
+  featuresList,
+  integrations,
 }) => {
   return (
     <StyledSectionFeatures>
       <SectionContainer>
         <FeaturesTitle>{title}</FeaturesTitle>
 
-        <Features />
+        <Features list={featuresList.list} />
 
-        <Integrations />
+        <Integrations {...integrations} />
       </SectionContainer>
     </StyledSectionFeatures>
   );

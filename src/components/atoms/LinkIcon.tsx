@@ -4,27 +4,28 @@ import Icon, { IconId } from "@/components/atoms/Icon";
 import { paramsMap } from "@/styles/theme";
 import Link from "next/link";
 import styled from "styled-components";
-type SignUpLinkButtonProps = {
-  variant:
-    | "filled"
-    | "outlinedLarge"
-    | "outlinedSmall"
-    | "outlinedLargeGradient";
+
+type LinkIconProps = {
+  variant: LinkVariants;
 };
-const SignUpLinkButton: React.FC<SignUpLinkButtonProps> = ({
-  variant = "outlinedSmall",
-}) => {
+type LinkVariants =
+  | "filled"
+  | "outlinedLarge"
+  | "outlinedSmall"
+  | "outlinedLargeGradient";
+
+const LinkIcon: React.FC<LinkIconProps> = ({ variant = "outlinedSmall" }) => {
   return (
     <StLink href={"#"} variant={variant}>
       <span>SIGN UP</span>
 
-      <LinkIcon id={IconId.arrow_right} />
+      <StIcon id={IconId.arrow_right} className="iconLink" />
     </StLink>
   );
 };
-const LinkIcon = styled(Icon)<{ variant?: string }>``;
+const StIcon = styled(Icon)<{ variant?: string }>``;
 
-const StLink = styled(Link)<SignUpLinkButtonProps>`
+const StLink = styled(Link)<{ variant: LinkVariants }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,7 +66,7 @@ const StLink = styled(Link)<SignUpLinkButtonProps>`
     fill: ${({ variant }) => paramsMap?.fillHover[variant]};
     color: ${({ variant }) => paramsMap?.colorHover[variant]};
     border-color: ${({ variant }) => paramsMap?.borderColorHover[variant]};
-    ${LinkIcon} {
+    & .iconLink {
       color: ${({ variant }) => paramsMap?.fillHover[variant]};
     }
   }
@@ -76,10 +77,10 @@ const StLink = styled(Link)<SignUpLinkButtonProps>`
     color: ${({ variant }) => paramsMap?.colorActive[variant]};
     border-color: ${({ variant }) => paramsMap?.borderColorActive[variant]};
     background: ${({ variant }) => paramsMap?.backgroundActive[variant]};
-    ${LinkIcon} {
+    & .iconLink {
       color: ${({ variant }) => paramsMap?.fillActive[variant]};
     }
   }
 `;
 
-export default SignUpLinkButton;
+export default LinkIcon;

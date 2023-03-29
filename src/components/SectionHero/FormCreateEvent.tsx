@@ -1,13 +1,20 @@
 import Button from "@/components/atoms/Button";
-
-import testData from "@/testData";
 import { useState } from "react";
 import styled from "styled-components";
 import { IconId } from "../atoms/Icon";
 
-const FormCreateEvent: React.FC = () => {
+export type FormCreateEventProps = {
+  note: string;
+  eventInputPlaceholder: string;
+  eventInputName: string;
+  timeInputName: string;
+  timeInputPlaceholder: string;
+  submitButtonName: string;
+  submitButtonNameMobile: string;
+};
+
+const FormCreateEvent: React.FC<FormCreateEventProps> = (props) => {
   const [errorMessage, _setErrorMessage] = useState(null);
-  const { createEventFormData } = testData.heroSectionData;
 
   return (
     <StyledFormCreateEvent>
@@ -15,13 +22,13 @@ const FormCreateEvent: React.FC = () => {
         <Inputs>
           <InputsWrapper>
             <InputText
-              placeholder={createEventFormData.eventInputPlaceholder}
-              name={createEventFormData.eventInputName}
+              placeholder={props.eventInputPlaceholder}
+              name={props.eventInputName}
             />
 
             <InputTime
-              placeholder={createEventFormData.timeInputPlaceholder}
-              name={createEventFormData.timeInputName}
+              placeholder={props.timeInputPlaceholder}
+              name={props.timeInputName}
             />
           </InputsWrapper>
 
@@ -30,14 +37,15 @@ const FormCreateEvent: React.FC = () => {
 
         <Button
           variant="filled"
+          type="button"
           style={{ width: "100%" }}
           iconId={IconId.arrow_right}
         >
-          <ButtonName>{createEventFormData.submitButtonName}</ButtonName>
+          <ButtonName>{props.submitButtonName}</ButtonName>
         </Button>
       </Wrapper>
 
-      <FormNoteText>{createEventFormData.note}</FormNoteText>
+      <FormNoteText>{props.note}</FormNoteText>
     </StyledFormCreateEvent>
   );
 };

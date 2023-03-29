@@ -1,8 +1,8 @@
-import Profits from "./Profits/ProfitsList";
-import FormCreateEvent from "./FormCreateEvent";
-import HeroImage from "./HeroImage/HeroImage";
-import HeroTitle from "./HeroTitle";
-import HeroSubTitle from "./HeroSubTitle";
+import Profits from "./ProfitsList";
+import FormCreateEvent, { FormCreateEventProps } from "./FormCreateEvent";
+import HeroImage, { HeroSectionImgProps } from "./HeroImage";
+import HeroTitle from "../atoms/HeroTitle";
+import HeroSubTitle from "../atoms/HeroSubTitle";
 import testData from "@/testData";
 
 import SG from "@/styles";
@@ -10,10 +10,24 @@ import styled from "styled-components";
 
 import Image from "next/image";
 import images from "@/img";
+import { ProfitItemProps } from "../atoms/ProfitItem";
+import { Container } from "../atoms";
 
-const SectionHero: React.FC = () => {
-  const { title, subTitle, profitsList } = testData.heroSectionData;
+export type SectionHeroType = {
+  title: string;
+  subTitle: string;
+  profitsList: ProfitItemProps[];
+  heroImage: HeroSectionImgProps;
+  createEventFormData: FormCreateEventProps;
+};
 
+const SectionHero: React.FC<SectionHeroType> = ({
+  title,
+  subTitle,
+  profitsList,
+  heroImage,
+  createEventFormData,
+}) => {
   return (
     <StyledSectionHero>
       <BackgroundHeroItems>
@@ -26,17 +40,17 @@ const SectionHero: React.FC = () => {
         </BackgroundAvatarItem>
       </BackgroundHeroItems>
 
-      <SG.Container>
+      <Container>
         <FlexWrapper>
           <HeroTitle>{title}</HeroTitle>
 
           <HeroSubTitle>{subTitle}</HeroSubTitle>
 
-          <FormCreateEvent />
+          <FormCreateEvent {...createEventFormData} />
         </FlexWrapper>
-      </SG.Container>
+      </Container>
 
-      <HeroImage />
+      <HeroImage {...heroImage} />
 
       <Profits profitsList={profitsList} />
     </StyledSectionHero>

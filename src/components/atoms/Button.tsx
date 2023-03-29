@@ -9,30 +9,22 @@ export type BtnVariantNames =
   | "outlinedSmall";
 export interface IButtonProps {
   variant: BtnVariantNames;
-  children?: React.ReactNode;
   style?: object;
   iconId?: string;
 }
 
-export type ButtonProps = IButtonProps &
-  React.HTMLAttributes<HTMLButtonElement>;
-const Button: React.FC<ButtonProps> = ({
-  children,
-  variant = "filled",
-  iconId,
-  ...props
-}) => {
+const Button: React.FC<
+  IButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ children, variant = "filled", iconId, ...props }) => {
   return (
     <StyledButton {...{ variant, ...props }}>
       {children}
-      {iconId && <BtnIcon id={iconId} size="20px" />}
+      {iconId && <Icon id={iconId} size="20px" className="myIcon" />}
     </StyledButton>
   );
 };
 
-const BtnIcon = styled(Icon)``;
-
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<IButtonProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,9 +50,6 @@ const StyledButton = styled.button<ButtonProps>`
   background-color: ${({ variant }) => paramsMap?.backgroundColor[variant]};
   fill: ${({ variant }) => paramsMap?.fill[variant]};
   color: ${({ variant }) => paramsMap?.color[variant]};
-  ${BtnIcon} {
-    color: ${({ variant }) => paramsMap?.fill[variant]};
-  }
 
   border-color: ${({ variant }) => paramsMap?.borderColor[variant]};
   border-radius: ${({ variant }) => paramsMap?.borderRadius[variant]};
@@ -71,13 +60,16 @@ const StyledButton = styled.button<ButtonProps>`
   background: ${({ variant }) => paramsMap?.background[variant]};
   transition: all var(--timing-function__main);
 
+  & .myIcon {
+    color: ${({ variant }) => paramsMap?.fill[variant]};
+  }
   &:hover {
     background-color: ${({ variant }) =>
       paramsMap?.backgroundColorHover[variant]};
     fill: ${({ variant }) => paramsMap?.fillHover[variant]};
     color: ${({ variant }) => paramsMap?.colorHover[variant]};
     border-color: ${({ variant }) => paramsMap?.borderColorHover[variant]};
-    ${BtnIcon} {
+    & .myIcon {
       color: ${({ variant }) => paramsMap?.fillHover[variant]};
     }
   }
@@ -88,7 +80,7 @@ const StyledButton = styled.button<ButtonProps>`
     color: ${({ variant }) => paramsMap?.colorActive[variant]};
     border-color: ${({ variant }) => paramsMap?.borderColorActive[variant]};
     background: ${({ variant }) => paramsMap?.backgroundActive[variant]};
-    ${BtnIcon} {
+    & .myIcon {
       color: ${({ variant }) => paramsMap?.fillActive[variant]};
     }
   }

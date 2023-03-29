@@ -1,26 +1,28 @@
-import testData from "@/testData";
-// import Image from "next/image";
-import IntegrationItem from "./IntegrationItem";
+import IntegrationItem, { IntegrationItemProps } from "./IntegrationItem";
 import styled from "styled-components";
 
-const { integrations } = testData.featuresSectionData;
+export type IntegrationsProps = {
+  title: string;
+  subTitle: string;
+  list: IntegrationItemProps[];
+};
 
-const Integrations: React.FC = () => {
+const Integrations: React.FC<IntegrationsProps> = ({
+  title,
+  subTitle,
+  list,
+}) => {
   return (
     <>
       <IntegrationsContainer>
         <StyledIntegrations>
-          <IntegrationsTitle>
-            <>{testData.featuresSectionData.integrations.title}</>
-          </IntegrationsTitle>
+          <IntegrationsTitle>{title}</IntegrationsTitle>
 
-          <IntegrationsSubTitle>
-            <>{testData.featuresSectionData.integrations.subTitle}</>
-          </IntegrationsSubTitle>
+          <IntegrationsSubTitle>{subTitle}</IntegrationsSubTitle>
 
           <IntegrationsList>
-            {integrations.integrationsList.map((item) => (
-              <IntegrationItem key={item.id} {...item} />
+            {list.map((item) => (
+              <IntegrationItem key={item?._id} {...item} />
             ))}
           </IntegrationsList>
         </StyledIntegrations>
